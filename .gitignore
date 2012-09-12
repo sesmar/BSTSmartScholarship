@@ -1,0 +1,9 @@
+/BSTSmartScholarship/bin
+/BSTSmartScholarship/obj
+/BSTSmartScholarship.Business/bin
+/BSTSmartScholarship.Business/obj
+/BSTSmartScholarship.DataAccess/bin
+/BSTSmartScholarship.DataAccess/obj
+/Registrar/bin
+/Registrar/obj
+*.suo
