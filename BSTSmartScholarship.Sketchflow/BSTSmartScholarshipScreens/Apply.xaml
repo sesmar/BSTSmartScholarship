@@ -1,0 +1,38 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:pc="http://schemas.microsoft.com/prototyping/2010/controls"
+	xmlns:local="clr-namespace:BSTSmartScholarshipScreens"
+	mc:Ignorable="d"
+	x:Class="BSTSmartScholarshipScreens.Screen_1_1"
+	Width="640" Height="480">
+
+	<Grid x:Name="LayoutRoot" Background="White">
+		<TextBox Margin="0,121,7,0" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Right" Width="195"/>
+		<TextBlock HorizontalAlignment="Right" Margin="0,129,208,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" VerticalAlignment="Top" Text="Student Number:"/>
+		<TextBlock HorizontalAlignment="Left" Margin="8,129,0,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top"/>
+		<TextBlock HorizontalAlignment="Left" Margin="8,167,0,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top"/>
+		<TextBlock HorizontalAlignment="Left" Margin="8,205,0,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Phone Number:" VerticalAlignment="Top"/>
+		<TextBox Margin="108,121,0,0" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="195"/>
+		<TextBox Margin="108,159,0,0" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Left" Width="195" VerticalAlignment="Top"/>
+		<TextBox Margin="108,197,0,0" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="195"/>
+		<TextBlock HorizontalAlignment="Left" Margin="8,0,0,217" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Email Address:" VerticalAlignment="Bottom"/>
+		<TextBox Margin="108,235,0,211" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Left" Width="195" d:LayoutOverrides="Height"/>
+		<ComboBox HorizontalAlignment="Right" Margin="0,159,7,0" Style="{StaticResource ComboBox-Sketch}" VerticalAlignment="Top" Width="195" Height="34"/>
+		<RadioButton Content="Male" HorizontalAlignment="Left" Margin="108,0,0,185" Style="{StaticResource RadioButton-Sketch}" VerticalAlignment="Bottom" RenderTransformOrigin="0.646,0.136"/>
+		<RadioButton Content="Female" HorizontalAlignment="Left" Margin="182,0,0,185" Style="{StaticResource RadioButton-Sketch}" VerticalAlignment="Bottom" RenderTransformOrigin="-0.194,0.5"/>
+		<TextBlock HorizontalAlignment="Left" Margin="8,0,0,186" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Gender:" VerticalAlignment="Bottom"/>
+		<TextBlock HorizontalAlignment="Left" Margin="8,0,0,153" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Date of Birth:" VerticalAlignment="Bottom"/>
+		<TextBox Margin="108,0,0,147" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Left" Width="195" VerticalAlignment="Bottom"/>
+		<TextBlock HorizontalAlignment="Right" Margin="0,167,261,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Status:" VerticalAlignment="Top"/>
+		<TextBox Margin="0,197,6,0" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Right" Width="195"/>
+		<TextBlock HorizontalAlignment="Right" Margin="0,205,204,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" VerticalAlignment="Top" Text="Cummulative GPA:"/>
+		<Button Content="Apply" HorizontalAlignment="Right" Margin="0,0,8,109" Style="{StaticResource Button-Sketch}" VerticalAlignment="Bottom" Width="75"/>
+		<local:Navigation Height="50" Margin="8,63,8,0" VerticalAlignment="Top" d:IsPrototypingComposition="True"/>
+		<local:Header Height="51" Margin="8,8,279,0" VerticalAlignment="Top" d:IsPrototypingComposition="True"/>
+		<TextBox Margin="0,235,6,211" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Right" Width="195" d:LayoutOverrides="Height"/>
+		<TextBlock HorizontalAlignment="Right" Margin="0,0,228,217" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" VerticalAlignment="Bottom" Text="Credit Hours:"/>
+	</Grid>
+</UserControl>

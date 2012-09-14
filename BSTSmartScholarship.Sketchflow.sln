@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSTSmartScholarship", "BSTSmartScholarship.Sketchflow\BSTSmartScholarship.csproj", "{5235f83d-9004-43d3-9141-0c956cbd773c}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSTSmartScholarshipScreens", "BSTSmartScholarship.Sketchflow\BSTSmartScholarshipScreens\BSTSmartScholarshipScreens.csproj", "{1758869c-246c-4c7c-ab89-28469b7a8f58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5235F83D-9004-43D3-9141-0C956CBD773C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5235F83D-9004-43D3-9141-0C956CBD773C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5235F83D-9004-43D3-9141-0C956CBD773C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5235F83D-9004-43D3-9141-0C956CBD773C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1758869C-246C-4C7C-AB89-28469B7A8F58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1758869C-246C-4C7C-AB89-28469B7A8F58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1758869C-246C-4C7C-AB89-28469B7A8F58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1758869C-246C-4C7C-AB89-28469B7A8F58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
