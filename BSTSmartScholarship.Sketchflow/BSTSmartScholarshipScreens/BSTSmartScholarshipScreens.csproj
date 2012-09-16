@@ -75,6 +75,9 @@
     <Compile Include="Header.xaml.cs">
       <DependentUpon>Header.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Screen_1_2.xaml.cs">
+      <DependentUpon>Screen_1_2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Verify.xaml.cs">
       <DependentUpon>Verify.xaml</DependentUpon>
     </Compile>
@@ -95,6 +98,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Navigation.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screen_1_2.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>

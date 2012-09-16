@@ -75,6 +75,18 @@
       </Position>
       <VisualTag>1</VisualTag>
     </Screen>
+    <Screen>
+      <Type>Composition</Type>
+      <ClassName>BSTSmartScholarshipScreens.Screen_1_2</ClassName>
+      <DisplayName>ApplicantCompare</DisplayName>
+      <FileName>Screen_1_2.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>639</X>
+        <Y>78</Y>
+      </Position>
+      <VisualTag>1</VisualTag>
+    </Screen>
   </Screens>
   <Connections>
     <Connection>
@@ -120,18 +132,25 @@
       <VisualTag>1</VisualTag>
     </Connection>
     <Connection>
-      <Source>BSTSmartScholarshipScreens.Verify</Source>
-      <Target>BSTSmartScholarshipScreens.ApplicantListing</Target>
-      <Type>Composition</Type>
-      <TransitionType>None</TransitionType>
-      <VisualTag>1</VisualTag>
-    </Connection>
-    <Connection>
       <Source>BSTSmartScholarshipScreens.Screen_1</Source>
       <Target>BSTSmartScholarshipScreens.Verify</Target>
       <Type>Navigation</Type>
       <TransitionType>Fade</TransitionType>
       <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>BSTSmartScholarshipScreens.Verify</Source>
+      <Target>BSTSmartScholarshipScreens.Screen_1_2</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>BSTSmartScholarshipScreens.Verify</Source>
+      <Target>BSTSmartScholarshipScreens.ApplicantListing</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
     </Connection>
   </Connections>
   <PrototypeRevision>0</PrototypeRevision>

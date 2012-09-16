@@ -7,11 +7,15 @@
 	mc:Ignorable="d"
 	x:Class="BSTSmartScholarshipScreens.Verify"
 	Width="640" Height="480">
+	<UserControl.Resources>
+		<Storyboard x:Name="CompareWithRegistrar"/>
+	</UserControl.Resources>
 
 	<Grid x:Name="LayoutRoot" Background="White">
 		<local:Header Height="51" Margin="8,8,279,0" VerticalAlignment="Top" d:IsPrototypingComposition="True"/>
 		<local:ApplicantListing Height="89" Margin="8,108,8,0" VerticalAlignment="Top" d:IsPrototypingComposition="True" Width="624"/>
 		<local:ApplicantListing Margin="8,201,8,190" Width="624"/>
 		<local:ApplicantListing Margin="8,0,8,97" Width="624" Height="89" VerticalAlignment="Bottom"/>
+		<local:Screen_1_2 Margin="127,108,113,88" d:IsPrototypingComposition="True" Visibility="Collapsed"/>
 	</Grid>
 </UserControl>
