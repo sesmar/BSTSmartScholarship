@@ -9,6 +9,7 @@
 	Width="400" Height="284">
 
 	<Grid x:Name="LayoutRoot" Background="White" Width="400" d:LayoutOverrides="VerticalMargin">
+		<pc:SketchRectangleSL Style="{StaticResource Rectangle-Sketch}"/>
 		<TextBlock Margin="8,8,8,0" Style="{StaticResource TextBlock-Sketch}" TextWrapping="Wrap" Text="Compare Applicant" VerticalAlignment="Top" FontSize="24" HorizontalAlignment="Center" FontWeight="Bold"/>
 		<TextBlock HorizontalAlignment="Left" Height="0" Margin="187,125,0,0" Style="{StaticResource TextBlock-Sketch}" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="10"/>
 		<Button Content="Decline" HorizontalAlignment="Right" Margin="0,0,10,8" Style="{StaticResource Button-Sketch}" VerticalAlignment="Bottom" Width="75" Background="#7FFF0000"/>

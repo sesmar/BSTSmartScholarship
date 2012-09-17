@@ -18,3 +18,6 @@ C:\Users\Christopher\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.Sk
 C:\Users\Christopher\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.Sketchflow\BSTSmartScholarshipScreens\obj\Debug\ApplicantListing.g.cs
 C:\Users\Christopher\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.Sketchflow\BSTSmartScholarshipScreens\obj\Debug\Header.g.cs
 C:\Users\Christopher\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.Sketchflow\BSTSmartScholarshipScreens\obj\Debug\Verify.g.cs
+C:\Users\Christopher\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.Sketchflow\BSTSmartScholarshipScreens\obj\Debug\EligibleListing.g.cs
+C:\Users\Christopher\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.Sketchflow\BSTSmartScholarshipScreens\obj\Debug\ApplicantCompare.g.cs
+C:\Users\Christopher\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.Sketchflow\BSTSmartScholarshipScreens\obj\Debug\Eligible.g.cs

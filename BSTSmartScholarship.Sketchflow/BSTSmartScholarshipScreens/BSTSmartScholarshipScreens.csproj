@@ -72,11 +72,17 @@
     <Compile Include="Apply.xaml.cs">
       <DependentUpon>Apply.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EligibleListing.xaml.cs">
+      <DependentUpon>EligibleListing.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Header.xaml.cs">
       <DependentUpon>Header.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Screen_1_2.xaml.cs">
-      <DependentUpon>Screen_1_2.xaml</DependentUpon>
+    <Compile Include="ApplicantCompare.xaml.cs">
+      <DependentUpon>ApplicantCompare.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Eligible.xaml.cs">
+      <DependentUpon>Eligible.xaml</DependentUpon>
     </Compile>
     <Compile Include="Verify.xaml.cs">
       <DependentUpon>Verify.xaml</DependentUpon>
@@ -93,6 +99,10 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="EligibleListing.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Header.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
@@ -101,7 +111,11 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Screen_1_2.xaml">
+    <Page Include="ApplicantCompare.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Eligible.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>

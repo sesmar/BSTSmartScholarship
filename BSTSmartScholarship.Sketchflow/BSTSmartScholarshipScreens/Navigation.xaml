@@ -4,11 +4,27 @@
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:pc="http://schemas.microsoft.com/prototyping/2010/controls"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity"
 	mc:Ignorable="d"
 	x:Class="BSTSmartScholarshipScreens.Navigation"
 	d:DesignWidth="624" d:DesignHeight="50" Height="50" Width="624">
 
 	<Grid x:Name="LayoutRoot">
 		<pc:SketchRectangleSL Style="{StaticResource Rectangle-Sketch}"/>
+		<Button Content="Pending Verification" HorizontalAlignment="Left" Style="{StaticResource Button-Sketch}" Width="142">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<pi:NavigateToScreenAction TargetScreen="BSTSmartScholarshipScreens.Verify"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
+		<Button Content="Eligible" HorizontalAlignment="Left" Style="{StaticResource Button-Sketch}" Width="142" Margin="142,0,0,0">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<pi:NavigateToScreenAction TargetScreen="BSTSmartScholarshipScreens.Screen_1_3"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
+		<Button Content="Awarded" Style="{StaticResource Button-Sketch}" Margin="284,0,198,0"/>
 	</Grid>
 </UserControl>

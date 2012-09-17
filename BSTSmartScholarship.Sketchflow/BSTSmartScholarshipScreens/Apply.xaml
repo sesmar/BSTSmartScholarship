@@ -10,29 +10,29 @@
 	Width="640" Height="480">
 
 	<Grid x:Name="LayoutRoot" Background="White">
-		<TextBox Margin="0,121,7,0" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Right" Width="195"/>
-		<TextBlock HorizontalAlignment="Right" Margin="0,129,208,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" VerticalAlignment="Top" Text="Student Number:"/>
-		<TextBlock HorizontalAlignment="Left" Margin="8,129,0,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top"/>
-		<TextBlock HorizontalAlignment="Left" Margin="8,167,0,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top"/>
-		<TextBlock HorizontalAlignment="Left" Margin="8,205,0,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Phone Number:" VerticalAlignment="Top"/>
-		<TextBox Margin="108,121,0,0" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="195"/>
-		<TextBox Margin="108,159,0,0" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Left" Width="195" VerticalAlignment="Top"/>
-		<TextBox Margin="108,197,0,0" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="195"/>
-		<TextBlock HorizontalAlignment="Left" Margin="8,0,0,217" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Email Address:" VerticalAlignment="Bottom"/>
-		<TextBox Margin="108,235,0,211" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Left" Width="195" d:LayoutOverrides="Height"/>
-		<ComboBox HorizontalAlignment="Right" Margin="0,159,7,0" Style="{StaticResource ComboBox-Sketch}" VerticalAlignment="Top" Width="195" Height="34"/>
-		<RadioButton Content="Male" HorizontalAlignment="Left" Margin="108,0,0,185" Style="{StaticResource RadioButton-Sketch}" VerticalAlignment="Bottom" RenderTransformOrigin="0.646,0.136"/>
-		<RadioButton Content="Female" HorizontalAlignment="Left" Margin="182,0,0,185" Style="{StaticResource RadioButton-Sketch}" VerticalAlignment="Bottom" RenderTransformOrigin="-0.194,0.5"/>
-		<TextBlock HorizontalAlignment="Left" Margin="8,0,0,186" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Gender:" VerticalAlignment="Bottom"/>
-		<TextBlock HorizontalAlignment="Left" Margin="8,0,0,153" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Date of Birth:" VerticalAlignment="Bottom"/>
-		<TextBox Margin="108,0,0,147" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Left" Width="195" VerticalAlignment="Bottom"/>
-		<TextBlock HorizontalAlignment="Right" Margin="0,167,261,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Status:" VerticalAlignment="Top"/>
-		<TextBox Margin="0,197,6,0" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Right" Width="195"/>
-		<TextBlock HorizontalAlignment="Right" Margin="0,205,204,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" VerticalAlignment="Top" Text="Cummulative GPA:"/>
-		<Button Content="Apply" HorizontalAlignment="Right" Margin="0,0,8,109" Style="{StaticResource Button-Sketch}" VerticalAlignment="Bottom" Width="75"/>
-		<local:Navigation Height="50" Margin="8,63,8,0" VerticalAlignment="Top" d:IsPrototypingComposition="True"/>
+		<TextBox Margin="0,141,7,0" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Right" Width="195"/>
+		<TextBlock HorizontalAlignment="Right" Margin="0,149,208,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" VerticalAlignment="Top" Text="Student Number:"/>
+		<TextBlock HorizontalAlignment="Left" Margin="8,149,0,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top"/>
+		<TextBlock HorizontalAlignment="Left" Margin="8,187,0,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top"/>
+		<TextBlock HorizontalAlignment="Left" Margin="8,225,0,235" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Phone Number:" d:LayoutOverrides="Height"/>
+		<TextBox Margin="108,141,0,0" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="195"/>
+		<TextBox Margin="108,179,0,0" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Left" Width="195" VerticalAlignment="Top"/>
+		<TextBox Margin="108,217,0,229" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Left" Width="195" d:LayoutOverrides="Height"/>
+		<TextBlock HorizontalAlignment="Left" Margin="8,0,0,197" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Email Address:" VerticalAlignment="Bottom"/>
+		<TextBox Margin="108,0,0,191" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Left" Width="195" VerticalAlignment="Bottom"/>
+		<ComboBox HorizontalAlignment="Right" Margin="0,179,7,0" Style="{StaticResource ComboBox-Sketch}" VerticalAlignment="Top" Width="195" Height="34"/>
+		<RadioButton Content="Male" HorizontalAlignment="Left" Margin="108,0,0,165" Style="{StaticResource RadioButton-Sketch}" RenderTransformOrigin="0.646,0.136" VerticalAlignment="Bottom"/>
+		<RadioButton Content="Female" HorizontalAlignment="Left" Margin="182,0,0,165" Style="{StaticResource RadioButton-Sketch}" RenderTransformOrigin="-0.194,0.5" VerticalAlignment="Bottom"/>
+		<TextBlock HorizontalAlignment="Left" Margin="8,0,0,166" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Gender:" VerticalAlignment="Bottom"/>
+		<TextBlock HorizontalAlignment="Left" Margin="8,0,0,133" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Date of Birth:" VerticalAlignment="Bottom"/>
+		<TextBox Margin="108,0,0,127" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Left" Width="195" VerticalAlignment="Bottom"/>
+		<TextBlock HorizontalAlignment="Right" Margin="0,187,261,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Status:" VerticalAlignment="Top"/>
+		<TextBox Margin="0,217,6,229" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Right" Width="195" d:LayoutOverrides="Height"/>
+		<TextBlock HorizontalAlignment="Right" Margin="0,225,204,235" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Cummulative GPA:" d:LayoutOverrides="Height"/>
+		<Button Content="Apply" HorizontalAlignment="Right" Margin="0,0,8,89" Style="{StaticResource Button-Sketch}" VerticalAlignment="Bottom" Width="75"/>
 		<local:Header Height="51" Margin="8,8,279,0" VerticalAlignment="Top" d:IsPrototypingComposition="True"/>
-		<TextBox Margin="0,235,6,211" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Right" Width="195" d:LayoutOverrides="Height"/>
-		<TextBlock HorizontalAlignment="Right" Margin="0,0,228,217" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" VerticalAlignment="Bottom" Text="Credit Hours:"/>
+		<TextBox Margin="0,0,6,191" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Right" Width="195" VerticalAlignment="Bottom"/>
+		<TextBlock HorizontalAlignment="Right" Margin="0,0,228,197" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Credit Hours:" VerticalAlignment="Bottom"/>
+		<TextBlock Margin="8,59,8,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" VerticalAlignment="Top" Height="73"><Span FontSize="14.6666666666667" FontFamily="Calibri"><Run Text="Fusce iaculis, est quis lacinia pretium, pede metus molestie lacus, at gravida wisi ante at libero. Quisque ornare placerat risus. Ut molestie magna at mi. Integer aliquet mauris et nibh. Ut mattis ligula posuere velit. Nunc sagittis. Curabitur varius fringilla nisl. Duis pretium mi euismod erat. Maecenas id augue. Nam vulputate. Duis a quam non neque lobortis malesuada. Praesent euismod. Donec nulla augue, venenatis scelerisque, dapibus a, consequat at, leo."/></Span></TextBlock>
 	</Grid>
 </UserControl>
