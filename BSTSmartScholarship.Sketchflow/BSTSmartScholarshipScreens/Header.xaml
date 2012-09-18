@@ -3,11 +3,16 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity"
 	mc:Ignorable="d"
 	x:Class="BSTSmartScholarshipScreens.Header"
 	d:DesignWidth="353" d:DesignHeight="51" Height="51" Width="353">
 
 	<Grid x:Name="LayoutRoot">
-		<TextBlock Style="{StaticResource TitleLeft-Sketch}" TextWrapping="Wrap" HorizontalAlignment="Stretch"><Run Text="BST Smart Scholarship"/><LineBreak/><Run/></TextBlock>
+		<TextBlock Style="{StaticResource TitleLeft-Sketch}" TextWrapping="Wrap" HorizontalAlignment="Stretch"><i:Interaction.Triggers>
+				<i:EventTrigger EventName="MouseLeftButtonDown">
+					<pi:NavigateToScreenAction TargetScreen="BSTSmartScholarshipScreens.Screen_1"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers><Run Text="BST Smart Scholarship"/><LineBreak/><Run/></TextBlock>
 	</Grid>
 </UserControl>

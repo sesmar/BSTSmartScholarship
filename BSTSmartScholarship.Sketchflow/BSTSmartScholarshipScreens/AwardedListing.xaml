@@ -6,17 +6,17 @@
 	xmlns:pc="http://schemas.microsoft.com/prototyping/2010/controls"
 	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
 	mc:Ignorable="d"
-	x:Class="BSTSmartScholarshipScreens.EligibleListing"
+	x:Class="BSTSmartScholarshipScreens.Copy_of_EligibleListing"
 	d:DesignWidth="624" d:DesignHeight="79" Height="79" Width="624">
 
 	<Grid x:Name="LayoutRoot" Margin="0,0,0,-10" Width="624" Height="89">
-		<pc:SketchRectangleSL Style="{StaticResource Rectangle-Sketch}" Background="White" Width="624" Height="89"/>
-		<Button Content="Decline" HorizontalAlignment="Right" Margin="0,0,8,8" Style="{StaticResource Button-Sketch}" VerticalAlignment="Bottom" Width="102">
+		<pc:SketchRectangleSL x:Name="sketchRectangleSL" Style="{StaticResource Rectangle-Sketch}" Background="White" Width="624" Height="89"/>
+		<Button Content="Vote" HorizontalAlignment="Right" Margin="0,0,8,8" Style="{StaticResource Button-Sketch}" VerticalAlignment="Bottom" Width="102">
 			<i:Interaction.Triggers>
 				<i:EventTrigger EventName="Click">
-					<ei:ChangePropertyAction TargetName="LayoutRoot" PropertyName="Visibility">
+					<ei:ChangePropertyAction TargetName="sketchRectangleSL" PropertyName="Background">
 						<ei:ChangePropertyAction.Value>
-							<Visibility>Collapsed</Visibility>
+							<SolidColorBrush Color="#FF63F55E"/>
 						</ei:ChangePropertyAction.Value>
 					</ei:ChangePropertyAction>
 				</i:EventTrigger>

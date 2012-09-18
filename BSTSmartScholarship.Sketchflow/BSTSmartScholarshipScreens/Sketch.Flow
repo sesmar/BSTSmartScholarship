@@ -22,8 +22,8 @@
       <FileName>Apply.xaml</FileName>
       <Annotations />
       <Position>
-        <X>238</X>
-        <Y>62</Y>
+        <X>95</X>
+        <Y>-112</Y>
       </Position>
       <VisualTag>0</VisualTag>
     </Screen>
@@ -34,8 +34,8 @@
       <FileName>Navigation.xaml</FileName>
       <Annotations />
       <Position>
-        <X>396</X>
-        <Y>101</Y>
+        <X>371</X>
+        <Y>10</Y>
       </Position>
       <VisualTag>1</VisualTag>
     </Screen>
@@ -46,8 +46,8 @@
       <FileName>Verify.xaml</FileName>
       <Annotations />
       <Position>
-        <X>413</X>
-        <Y>19</Y>
+        <X>223</X>
+        <Y>74</Y>
       </Position>
       <VisualTag>0</VisualTag>
     </Screen>
@@ -58,8 +58,8 @@
       <FileName>Header.xaml</FileName>
       <Annotations />
       <Position>
-        <X>92</X>
-        <Y>107</Y>
+        <X>81</X>
+        <Y>128</Y>
       </Position>
       <VisualTag>1</VisualTag>
     </Screen>
@@ -70,8 +70,8 @@
       <FileName>ApplicantListing.xaml</FileName>
       <Annotations />
       <Position>
-        <X>585</X>
-        <Y>18</Y>
+        <X>389</X>
+        <Y>57</Y>
       </Position>
       <VisualTag>1</VisualTag>
     </Screen>
@@ -82,8 +82,8 @@
       <FileName>ApplicantCompare.xaml</FileName>
       <Annotations />
       <Position>
-        <X>509</X>
-        <Y>-39</Y>
+        <X>354</X>
+        <Y>138</Y>
       </Position>
       <VisualTag>1</VisualTag>
     </Screen>
@@ -110,6 +110,54 @@
         <Y>-54</Y>
       </Position>
       <VisualTag>1</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Composition</Type>
+      <ClassName>BSTSmartScholarshipScreens.Copy_of_EligibleListing</ClassName>
+      <DisplayName>AwardedListing</DisplayName>
+      <FileName>AwardedListing.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>550</X>
+        <Y>-4</Y>
+      </Position>
+      <VisualTag>1</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>BSTSmartScholarshipScreens.Awarded</ClassName>
+      <DisplayName>Awarded</DisplayName>
+      <FileName>Awarded.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>542</X>
+        <Y>76</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>BSTSmartScholarshipScreens.LogIn</ClassName>
+      <DisplayName>LogIn</DisplayName>
+      <FileName>LogIn.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>222</X>
+        <Y>4</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>BSTSmartScholarshipScreens.Confirmation</ClassName>
+      <DisplayName>Confirmation</DisplayName>
+      <FileName>Confirmation.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>769</X>
+        <Y>63</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
     </Screen>
   </Screens>
   <Connections>
@@ -197,6 +245,83 @@
       <TransitionType>Fade</TransitionType>
       <VisualTag>0</VisualTag>
     </Connection>
+    <Connection>
+      <Source>BSTSmartScholarshipScreens.Screen_1</Source>
+      <Target>BSTSmartScholarshipScreens.Verify</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>BSTSmartScholarshipScreens.Awarded</Source>
+      <Target>BSTSmartScholarshipScreens.Copy_of_EligibleListing</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>BSTSmartScholarshipScreens.Awarded</Source>
+      <Target>BSTSmartScholarshipScreens.Navigation</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>BSTSmartScholarshipScreens.Awarded</Source>
+      <Target>BSTSmartScholarshipScreens.Header</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>BSTSmartScholarshipScreens.Navigation</Source>
+      <Target>BSTSmartScholarshipScreens.Awarded</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>BSTSmartScholarshipScreens.Header</Source>
+      <Target>BSTSmartScholarshipScreens.Screen_1</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>BSTSmartScholarshipScreens.LogIn</Source>
+      <Target>BSTSmartScholarshipScreens.Header</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>BSTSmartScholarshipScreens.LogIn</Source>
+      <Target>BSTSmartScholarshipScreens.Verify</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>BSTSmartScholarshipScreens.Screen_1</Source>
+      <Target>BSTSmartScholarshipScreens.LogIn</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>BSTSmartScholarshipScreens.Confirmation</Source>
+      <Target>BSTSmartScholarshipScreens.Header</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>BSTSmartScholarshipScreens.Screen_1_1</Source>
+      <Target>BSTSmartScholarshipScreens.Confirmation</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
   </Connections>
   <PrototypeRevision>0</PrototypeRevision>
   <BrandingText>Microsoft SketchFlow Prototype</BrandingText>
@@ -244,8 +369,8 @@
   <ViewState>
     <Zoom>1</Zoom>
     <Center>
-      <X>495.51885830784931</X>
-      <Y>33.775147928994031</Y>
+      <X>581.20209625345126</X>
+      <Y>29.77780378211051</Y>
     </Center>
   </ViewState>
 </Data>

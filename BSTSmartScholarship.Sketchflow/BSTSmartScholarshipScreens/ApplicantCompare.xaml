@@ -4,6 +4,7 @@
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:pc="http://schemas.microsoft.com/prototyping/2010/controls"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
 	mc:Ignorable="d"
 	x:Class="BSTSmartScholarshipScreens.Screen_1_2"
 	Width="400" Height="284">
@@ -12,8 +13,28 @@
 		<pc:SketchRectangleSL Style="{StaticResource Rectangle-Sketch}"/>
 		<TextBlock Margin="8,8,8,0" Style="{StaticResource TextBlock-Sketch}" TextWrapping="Wrap" Text="Compare Applicant" VerticalAlignment="Top" FontSize="24" HorizontalAlignment="Center" FontWeight="Bold"/>
 		<TextBlock HorizontalAlignment="Left" Height="0" Margin="187,125,0,0" Style="{StaticResource TextBlock-Sketch}" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="10"/>
-		<Button Content="Decline" HorizontalAlignment="Right" Margin="0,0,10,8" Style="{StaticResource Button-Sketch}" VerticalAlignment="Bottom" Width="75" Background="#7FFF0000"/>
-		<Button Content="Accept" HorizontalAlignment="Right" Margin="0,0,89,8" Style="{StaticResource Button-Sketch}" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="-0.787,0.233" Background="#FF63F55E"/>
+		<Button Content="Decline" HorizontalAlignment="Right" Margin="0,0,10,8" Style="{StaticResource Button-Sketch}" VerticalAlignment="Bottom" Width="75" Background="#7FFF0000">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<ei:ChangePropertyAction TargetName="LayoutRoot" PropertyName="Visibility">
+						<ei:ChangePropertyAction.Value>
+							<Visibility>Collapsed</Visibility>
+						</ei:ChangePropertyAction.Value>
+					</ei:ChangePropertyAction>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
+		<Button Content="Accept" HorizontalAlignment="Right" Margin="0,0,89,8" Style="{StaticResource Button-Sketch}" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="-0.787,0.233" Background="#FF63F55E">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<ei:ChangePropertyAction TargetName="LayoutRoot" PropertyName="Visibility">
+						<ei:ChangePropertyAction.Value>
+							<Visibility>Collapsed</Visibility>
+						</ei:ChangePropertyAction.Value>
+					</ei:ChangePropertyAction>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
 		<TextBox HorizontalAlignment="Left" Height="30" Margin="10,79,0,0" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="Applicants Name" VerticalAlignment="Top" Width="190" Background="#FF63F55E"/>
 		<TextBox HorizontalAlignment="Right" Height="30" Margin="0,79,10,0" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="Applicants Name" VerticalAlignment="Top" Width="190" Background="#FF63F55E"/>
 		<TextBox Height="30" Margin="10,109,0,0" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="Status" VerticalAlignment="Top" Background="#7FFF0000" HorizontalAlignment="Left" Width="190"/>

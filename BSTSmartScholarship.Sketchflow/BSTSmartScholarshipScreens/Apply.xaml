@@ -5,6 +5,7 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:pc="http://schemas.microsoft.com/prototyping/2010/controls"
 	xmlns:local="clr-namespace:BSTSmartScholarshipScreens"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity"
 	mc:Ignorable="d"
 	x:Class="BSTSmartScholarshipScreens.Screen_1_1"
 	Width="640" Height="480">
@@ -29,7 +30,13 @@
 		<TextBlock HorizontalAlignment="Right" Margin="0,187,261,0" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Status:" VerticalAlignment="Top"/>
 		<TextBox Margin="0,217,6,229" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Right" Width="195" d:LayoutOverrides="Height"/>
 		<TextBlock HorizontalAlignment="Right" Margin="0,225,204,235" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Cummulative GPA:" d:LayoutOverrides="Height"/>
-		<Button Content="Apply" HorizontalAlignment="Right" Margin="0,0,8,89" Style="{StaticResource Button-Sketch}" VerticalAlignment="Bottom" Width="75"/>
+		<Button Content="Apply" HorizontalAlignment="Right" Margin="0,0,8,89" Style="{StaticResource Button-Sketch}" VerticalAlignment="Bottom" Width="75">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<pi:NavigateToScreenAction TargetScreen="BSTSmartScholarshipScreens.Confirmation"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
 		<local:Header Height="51" Margin="8,8,279,0" VerticalAlignment="Top" d:IsPrototypingComposition="True"/>
 		<TextBox Margin="0,0,6,191" Style="{StaticResource BasicTextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Right" Width="195" VerticalAlignment="Bottom"/>
 		<TextBlock HorizontalAlignment="Right" Margin="0,0,228,197" Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" Text="Credit Hours:" VerticalAlignment="Bottom"/>

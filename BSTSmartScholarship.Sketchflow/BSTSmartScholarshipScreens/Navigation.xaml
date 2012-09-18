@@ -25,6 +25,12 @@
 				</i:EventTrigger>
 			</i:Interaction.Triggers>
 		</Button>
-		<Button Content="Awarded" Style="{StaticResource Button-Sketch}" Margin="284,0,198,0"/>
+		<Button Content="Awarded" Style="{StaticResource Button-Sketch}" Margin="284,0,198,0">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<pi:NavigateToScreenAction TargetScreen="BSTSmartScholarshipScreens.Awarded"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
 	</Grid>
 </UserControl>

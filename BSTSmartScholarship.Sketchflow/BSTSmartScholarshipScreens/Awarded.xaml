@@ -1,0 +1,17 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:BSTSmartScholarshipScreens"
+	mc:Ignorable="d"
+	x:Class="BSTSmartScholarshipScreens.Awarded"
+	Width="640" Height="480">
+
+	<Grid x:Name="LayoutRoot" Background="White">
+		<local:Copy_of_EligibleListing Height="79" Margin="8,117,8,0" VerticalAlignment="Top" d:IsPrototypingComposition="True"/>
+		<local:Navigation Height="50" Margin="8,63,8,0" VerticalAlignment="Top" d:IsPrototypingComposition="True"/>
+		<local:Header Height="51" Margin="8,8,279,0" VerticalAlignment="Top" d:IsPrototypingComposition="True"/>
+		<local:Copy_of_EligibleListing Margin="8,211,8,190"/>
+	</Grid>
+</UserControl>

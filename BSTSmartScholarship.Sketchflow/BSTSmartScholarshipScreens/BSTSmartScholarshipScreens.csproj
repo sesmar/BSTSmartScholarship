@@ -66,6 +66,15 @@
     <Compile Include="ApplicantListing.xaml.cs">
       <DependentUpon>ApplicantListing.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Awarded.xaml.cs">
+      <DependentUpon>Awarded.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AwardedListing.xaml.cs">
+      <DependentUpon>AwardedListing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Confirmation.xaml.cs">
+      <DependentUpon>Confirmation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Default.xaml.cs">
       <DependentUpon>Default.xaml</DependentUpon>
     </Compile>
@@ -84,10 +93,25 @@
     <Compile Include="Eligible.xaml.cs">
       <DependentUpon>Eligible.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LogIn.xaml.cs">
+      <DependentUpon>LogIn.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Verify.xaml.cs">
       <DependentUpon>Verify.xaml</DependentUpon>
     </Compile>
     <Page Include="ApplicantListing.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Awarded.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AwardedListing.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Confirmation.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -104,6 +128,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Header.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LogIn.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
