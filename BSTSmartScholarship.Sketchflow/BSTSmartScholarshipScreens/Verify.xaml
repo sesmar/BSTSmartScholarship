@@ -17,13 +17,13 @@
 		<local:ApplicantListing Height="89" Margin="8,108,8,0" VerticalAlignment="Top" d:IsPrototypingComposition="True" Width="624">
 			<i:Interaction.Triggers>
 				<i:EventTrigger EventName="MouseLeftButtonDown">
-					<ei:ChangePropertyAction TargetName="ApplicantCompare" PropertyName="Visibility"/>
+					<ei:ChangePropertyAction TargetName="screen_1_2" PropertyName="Visibility"/>
 				</i:EventTrigger>
 			</i:Interaction.Triggers>
 		</local:ApplicantListing>
 		<local:ApplicantListing Margin="8,201,8,190" Width="624"/>
 		<local:ApplicantListing Margin="8,0,8,97" Width="624" Height="89" VerticalAlignment="Bottom"/>
-		<local:Screen_1_2 x:Name="ApplicantCompare" Margin="127,108,113,88" d:IsPrototypingComposition="True" BorderBrush="Black" BorderThickness="2" Visibility="Collapsed"/>
+		<local:Screen_1_2 x:Name="screen_1_2" Margin="127,108,113,88" d:IsPrototypingComposition="True" BorderBrush="Black" BorderThickness="2" Visibility="Collapsed"/>
 		<local:Navigation Margin="8,56,8,0" VerticalAlignment="Top" Width="Auto" d:IsPrototypingComposition="True"/>
 		<local:Navigation Margin="8,56,8,0" VerticalAlignment="Top" Width="Auto" Height="48"/>
 	</Grid>

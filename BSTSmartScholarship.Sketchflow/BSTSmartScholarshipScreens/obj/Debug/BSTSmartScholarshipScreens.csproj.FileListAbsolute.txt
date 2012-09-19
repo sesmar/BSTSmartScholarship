@@ -39,3 +39,7 @@ E:\Projects\GitHub\BSTSmartScholarship\BSTSmartScholarship.Sketchflow\BSTSmartSc
 E:\Projects\GitHub\BSTSmartScholarship\BSTSmartScholarship.Sketchflow\BSTSmartScholarshipScreens\obj\Debug\BSTSmartScholarship.Screens.dll
 E:\Projects\GitHub\BSTSmartScholarship\BSTSmartScholarship.Sketchflow\BSTSmartScholarshipScreens\obj\Debug\BSTSmartScholarship.Screens.pdb
 E:\Projects\GitHub\BSTSmartScholarship\BSTSmartScholarship.Sketchflow\BSTSmartScholarshipScreens\obj\Debug\Confirmation.g.cs
+C:\Users\Christopher\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.Sketchflow\BSTSmartScholarshipScreens\obj\Debug\Awarded.g.cs
+C:\Users\Christopher\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.Sketchflow\BSTSmartScholarshipScreens\obj\Debug\AwardedListing.g.cs
+C:\Users\Christopher\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.Sketchflow\BSTSmartScholarshipScreens\obj\Debug\Confirmation.g.cs
+C:\Users\Christopher\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.Sketchflow\BSTSmartScholarshipScreens\obj\Debug\LogIn.g.cs
