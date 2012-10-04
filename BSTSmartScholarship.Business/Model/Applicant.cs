@@ -27,8 +27,8 @@
 		[StringLength(128, ErrorMessage = "Last name cannot be longer than 128 characters")]
 		public String LastName { get; set; }
 
-		[Required(ErrorMessage = "Email address is requried")]
-		[StringLength(10, ErrorMessage = "Phone numbercannot be longer than 10 characters")]
+		[Required(ErrorMessage = "Phone number is requried")]
+		[StringLength(10, ErrorMessage = "Phone number cannot be longer than 10 characters")]
 		public String PhoneNumber { get; set; }
 
 		[Required(ErrorMessage = "Email address is requried")]
@@ -45,9 +45,9 @@
 		[Required(ErrorMessage = "Status is requried")]
 		public Int32 Status { get; set; }
 
-		[Required(ErrorMessage = "Cummulative G.P.A. is requried")]
-		[Range(0, 4.0,ErrorMessage="Cummulative G.P.A. must be between 0 and 4.0")]
-		public Double CummulativeGPA { get; set; }
+		[Required(ErrorMessage = "Cumulative G.P.A. is requried")]
+		[Range(0, 4.0,ErrorMessage="Cumulative G.P.A. must be between 0 and 4.0")]
+		public Double CumulativeGPA { get; set; }
 
 		[Required(ErrorMessage = "Current number of credit hours is requried")]
 		[Range(0, 21, ErrorMessage = "The current number of credits hours must be between 0 and 21")]
