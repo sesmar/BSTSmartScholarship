@@ -15,6 +15,7 @@
 	{
 		#region "Public Properties"
 
+		[Key]
 		[Required(ErrorMessage="Student number is requried")]
 		[StringLength(10, ErrorMessage = "Student number cannot be longer than 10 characters")]
 		public String StudentNumber { get; set; }
@@ -83,7 +84,7 @@
 			applicant.Gender = gender;
 			applicant.DateOfBirth = dateOfBirth;
 			applicant.Status = status;
-			applicant.CummulativeGPA = cummulativeGPA;
+			applicant.CumulativeGPA = cummulativeGPA;
 			applicant.CreditHours = creditHours;
 
 			return applicant;

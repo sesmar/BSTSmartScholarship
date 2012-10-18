@@ -1,6 +1,16 @@
-﻿@{
+﻿@model IEnumerable<BSTSmartScholarship.Business.Model.Applicant> 
+
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Verify Applicants</h2>
+
+<section class="applicants">
+    @{ foreach (BSTSmartScholarship.Business.Model.Applicant applicant in Model) {
+          <section class="applicant">
+              <p>@(applicant.FirstName)</p>
+          </section>
+          }}
+</section>

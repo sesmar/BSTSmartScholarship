@@ -8,6 +8,7 @@
 	using System.Web;
 	using System.Web.Mvc;
 
+	using BSTSmartScholarship.Business.Model;
 	#endregion
 
 	public class AdminController : Controller
@@ -17,7 +18,7 @@
 		[Authorize]
 		public ActionResult Index()
 		{
-			return View();
+			return View(ApplicantList.GetList());
 		}
 	}
 }

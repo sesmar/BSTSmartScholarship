@@ -13,92 +13,73 @@
     <fieldset>
         <legend>Applicant</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.StudentNumber)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.StudentNumber)
-            @Html.ValidationMessageFor(model => model.StudentNumber)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.FirstName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.FirstName)
+        <section>
             @Html.ValidationMessageFor(model => model.FirstName)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.LastName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.LastName)
             @Html.ValidationMessageFor(model => model.LastName)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.PhoneNumber)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.PhoneNumber)
             @Html.ValidationMessageFor(model => model.PhoneNumber)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmailAddress)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmailAddress)
             @Html.ValidationMessageFor(model => model.EmailAddress)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Gender)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Gender)
             @Html.ValidationMessageFor(model => model.Gender)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DateOfBirth)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DateOfBirth)
             @Html.ValidationMessageFor(model => model.DateOfBirth)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Status)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Status)
+            @Html.ValidationMessageFor(model => model.StudentNumber)
             @Html.ValidationMessageFor(model => model.Status)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CummulativeGPA)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CummulativeGPA)
-            @Html.ValidationMessageFor(model => model.CummulativeGPA)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CreditHours)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CreditHours)
+            @Html.ValidationMessageFor(model => model.CumulativeGPA)
             @Html.ValidationMessageFor(model => model.CreditHours)
-        </div>
+        </section>
+        <section class="personal-info">  
+            <div class="editor-field">
+                @Html.LabelFor(model => model.FirstName)
+                @Html.EditorFor(model => model.FirstName)
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.IsEligible)
-        </div>
+            <div class="editor-field">
+                @Html.LabelFor(model => model.LastName)
+                @Html.EditorFor(model => model.LastName)
+            </div>
 
-        <p>
-            <input type="submit" value="Create" />
+            <div class="editor-field">
+                @Html.LabelFor(model => model.PhoneNumber)
+                @Html.EditorFor(model => model.PhoneNumber)
+            </div>
+
+            <div class="editor-field">
+                @Html.LabelFor(model => model.EmailAddress)
+                @Html.EditorFor(model => model.EmailAddress)
+            </div>
+
+            <div class="editor-field">
+                @Html.LabelFor(model => model.Gender)
+                @Html.EditorFor(model => model.Gender)
+            </div>
+
+            <div class="editor-field">
+                @Html.LabelFor(model => model.DateOfBirth)
+                @Html.EditorFor(model => model.DateOfBirth)
+            </div>
+        </section>
+
+        <section class="collegiate-info">
+            <div class="editor-field">
+                @Html.LabelFor(model => model.StudentNumber)
+                @Html.EditorFor(model => model.StudentNumber)
+            </div>
+            
+            <div class="editor-field">
+                @Html.LabelFor(model => model.Status)
+                @Html.EditorFor(model => model.Status)
+            </div>
+
+            <div class="editor-field">
+                @Html.LabelFor(model => model.CumulativeGPA)
+                @Html.EditorFor(model => model.CumulativeGPA)
+            </div>
+
+            <div class="editor-field">
+                @Html.LabelFor(model => model.CreditHours)
+                @Html.EditorFor(model => model.CreditHours)
+            </div>
+        </section>
+        <p style="clear: both; text-align: right;">
+            <input type="submit" value="Apply" />
         </p>
     </fieldset>
 }

@@ -207,6 +207,19 @@ ul#menu {
 
 /* page elements
 ----------------------------------------------------------*/
+section.personal-info
+{
+	/*display:inline-block;*/
+	float: left;
+}
+
+section.collegiate-info
+{
+	/*display:inline-block;*/
+	float: left;
+	margin-left: 64px;
+}
+
 /* featured */
 .featured {
     background-color: #fff;
@@ -415,9 +428,15 @@ fieldset {
         }
 
 label {
-    display: block;
+    display: inline-block;
+		text-align: right;
     font-size: 1.2em;
     font-weight: 600;
+}
+
+.editor-field label
+{
+	width: 115px;
 }
 
 label.checkbox {
@@ -500,6 +519,7 @@ textarea {
 .field-validation-error {
     color: #e80c4d;
     font-weight: bold;
+		display: block;
 }
 
 .field-validation-valid {

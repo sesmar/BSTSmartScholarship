@@ -11,9 +11,9 @@
 
 	#endregion
 
-	public interface ISmartScholarshipContext
+	public interface ISmartScholarshipContext : IDisposable
 	{
 		IDbSet<Applicant> Applicants { get; }
-		IDbSet<Award> Awards { get; }
+		//IDbSet<Award> Awards { get; }
 	}
 }

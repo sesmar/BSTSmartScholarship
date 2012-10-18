@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Applicant.cs" />
+    <Compile Include="Model\ApplicantList.cs" />
     <Compile Include="Model\Award.cs" />
     <Compile Include="Model\ISmartScholarshipContext.cs" />
     <Compile Include="Model\SmartScholarshipContext.cs" />
