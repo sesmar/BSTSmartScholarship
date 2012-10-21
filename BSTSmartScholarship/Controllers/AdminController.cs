@@ -8,7 +8,7 @@
 	using System.Web;
 	using System.Web.Mvc;
 
-	using BSTSmartScholarship.Business.Model;
+	using BSTSmartScholarship.Business;
 	#endregion
 
 	public class AdminController : Controller

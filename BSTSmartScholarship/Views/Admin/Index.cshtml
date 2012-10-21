@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BSTSmartScholarship.Business.Model.Applicant> 
+﻿@model IEnumerable<BSTSmartScholarship.Business.Applicant> 
 
 @{
     ViewBag.Title = "Index";
@@ -8,9 +8,11 @@
 <h2>Verify Applicants</h2>
 
 <section class="applicants">
-    @{ foreach (BSTSmartScholarship.Business.Model.Applicant applicant in Model) {
+    @{ foreach (BSTSmartScholarship.Business.Applicant applicant in Model) {
           <section class="applicant">
               <p>@(applicant.FirstName)</p>
+              <p>@(BSTSmartScholarship.Business.RegexUtility.FormatPhone(applicant.PhoneNumber))</p>
+              <p>@(applicant.EmailAddress)</p>
           </section>
           }}
 </section>

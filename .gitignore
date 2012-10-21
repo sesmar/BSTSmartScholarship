@@ -7,3 +7,5 @@
 /BSTSmartScholarship.Sketchflow/bin
 /BSTSmartScholarship.Sketchflow/obj
 *.suo
+/BSTSmartScholarship/App_Data/*.mdf
+/BSTSmartScholarship/App_Data/*.ldf

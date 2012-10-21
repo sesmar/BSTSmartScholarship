@@ -1,4 +1,4 @@
-﻿namespace BSTSmartScholarship.Business.Model
+﻿namespace BSTSmartScholarship.Business
 {
 	#region "Using Statements"
 

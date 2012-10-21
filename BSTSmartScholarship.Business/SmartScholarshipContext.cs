@@ -1,4 +1,4 @@
-﻿namespace BSTSmartScholarship.Business.Model
+﻿namespace BSTSmartScholarship.Business
 {
 	#region "Using Statements"
 
@@ -20,7 +20,7 @@
 			{
 				if (_current == null)
 					return new SmartScholarshipContext();
-
+				
 				return _current;
 			}
 		}

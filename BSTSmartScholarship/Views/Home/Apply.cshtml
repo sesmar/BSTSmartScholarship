@@ -1,4 +1,4 @@
-﻿@model BSTSmartScholarship.Business.Model.Applicant
+﻿@model BSTSmartScholarship.Business.Applicant
 
 @{
     ViewBag.Title = "Apply";
@@ -48,7 +48,7 @@
 
             <div class="editor-field">
                 @Html.LabelFor(model => model.Gender)
-                @Html.EditorFor(model => model.Gender)
+                @Html.DropDownListFor(model => model.Gender, BSTSmartScholarship.Models.SelectLists.GetGenders())
             </div>
 
             <div class="editor-field">
@@ -65,7 +65,7 @@
             
             <div class="editor-field">
                 @Html.LabelFor(model => model.Status)
-                @Html.EditorFor(model => model.Status)
+                @Html.DropDownListFor(model => model.Status, BSTSmartScholarship.Models.SelectLists.GetStatus())
             </div>
 
             <div class="editor-field">

@@ -168,7 +168,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201210111716325_InitialCreate.cs" />
+    <Compile Include="Migrations\201210111716325_InitialCreate.Designer.cs">
+      <DependentUpon>201210111716325_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201210212116529_UpdatesForApplicant.cs" />
+    <Compile Include="Migrations\201210212116529_UpdatesForApplicant.Designer.cs">
+      <DependentUpon>201210212116529_UpdatesForApplicant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\SelectLists.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -294,6 +304,14 @@
       <Project>{87c98aa9-b4eb-43e0-ad0a-8236633f78db}</Project>
       <Name>BSTSmartScholarship.Business</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201210111716325_InitialCreate.resx">
+      <DependentUpon>201210111716325_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201210212116529_UpdatesForApplicant.resx">
+      <DependentUpon>201210212116529_UpdatesForApplicant.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,4 +1,4 @@
-﻿namespace BSTSmartScholarship.Business.Model
+﻿namespace BSTSmartScholarship.Business
 {
 	#region "Using Statements"
 
@@ -15,5 +15,7 @@
 	{
 		IDbSet<Applicant> Applicants { get; }
 		//IDbSet<Award> Awards { get; }
+
+		Int32 SaveChanges();
 	}
 }

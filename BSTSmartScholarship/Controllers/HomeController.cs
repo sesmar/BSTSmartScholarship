@@ -8,6 +8,8 @@
 	using System.Web;
 	using System.Web.Mvc;
 
+	using BSTSmartScholarship.Business;
+
 	#endregion
 
 	public class HomeController : Controller
@@ -24,6 +26,14 @@
 			ViewBag.Message = "Your app description page.";
 
 			return View();
+		}
+
+		[HttpPost]
+		public ActionResult Apply(Applicant applicant)
+		{
+			applicant.Save();
+
+			return RedirectToAction("Index");
 		}
 
 		public ActionResult Contact()

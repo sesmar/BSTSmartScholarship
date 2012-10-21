@@ -45,11 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Applicant.cs" />
-    <Compile Include="Model\ApplicantList.cs" />
-    <Compile Include="Model\Award.cs" />
-    <Compile Include="Model\ISmartScholarshipContext.cs" />
-    <Compile Include="Model\SmartScholarshipContext.cs" />
+    <Compile Include="Applicant.cs" />
+    <Compile Include="ApplicantList.cs" />
+    <Compile Include="Award.cs" />
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="ISmartScholarshipContext.cs" />
+    <Compile Include="RegexUtility.cs" />
+    <Compile Include="SmartScholarshipContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
