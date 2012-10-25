@@ -1,5 +1,6 @@
 /BSTSmartScholarship/bin
 /BSTSmartScholarship/obj
+/BSTSmartScholarship/App_Data/
 /BSTSmartScholarship.Business/bin
 /BSTSmartScholarship.Business/obj
 /BSTSmartScholarship.DataAccess/bin
@@ -7,5 +8,3 @@
 /BSTSmartScholarship.Sketchflow/bin
 /BSTSmartScholarship.Sketchflow/obj
 *.suo
-/BSTSmartScholarship/App_Data/*.mdf
-/BSTSmartScholarship/App_Data/*.ldf
