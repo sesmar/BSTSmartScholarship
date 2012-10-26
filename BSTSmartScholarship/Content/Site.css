@@ -307,6 +307,33 @@ section.feature
 	padding: 10px;
 }
 
+section.left-column
+{
+	max-width: 599px;
+	float: left;
+}
+
+section.right-column
+{
+	max-width: 361px;
+	float: left;
+}
+
+a.apply-button
+{
+	background: url(../Images/apply_now.png) no-repeat top left;
+	display: block;
+	width: 361px;
+	height: 279px;
+	text-indent: -9999px;
+}
+
+a.apply-button:hover
+{
+	background: url(../Images/apply_now_over.png) no-repeat top left;
+}
+
+
 /* ordered list */
 ol.round
 {

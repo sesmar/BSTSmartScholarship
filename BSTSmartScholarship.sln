@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSTSmartScholarship", "BSTS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSTSmartScholarship.Business", "BSTSmartScholarship.Business\BSTSmartScholarship.Business.csproj", "{87C98AA9-B4EB-43E0-AD0A-8236633F78DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSTSmartScholarship.UnitTests", "BSTSmartScholarship.UnitTests\BSTSmartScholarship.UnitTests.csproj", "{D05817F3-1CA1-47F3-9DD3-A9AA849B958E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{87C98AA9-B4EB-43E0-AD0A-8236633F78DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87C98AA9-B4EB-43E0-AD0A-8236633F78DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87C98AA9-B4EB-43E0-AD0A-8236633F78DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D05817F3-1CA1-47F3-9DD3-A9AA849B958E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D05817F3-1CA1-47F3-9DD3-A9AA849B958E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D05817F3-1CA1-47F3-9DD3-A9AA849B958E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D05817F3-1CA1-47F3-9DD3-A9AA849B958E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -14,11 +14,12 @@
         </div>
     </section>
 }
+<section class="left-column">
 <h3>We suggest the following:</h3>
 <ol class="round">
     <li class="one">
         <h5>Getting Started</h5>
-        Click the large apply now button located to the left.
+        Click the large apply now button located to the right.
         @Html.ActionLink("Apply Now", "Apply", "Home")
     </li>
 
@@ -32,3 +33,8 @@
         Even if you are awarded the scholarship this semester, you can still apply again next semester.
     </li>
 </ol>
+</section>
+
+<section class="right-column">
+    @Html.ActionLink("Apply Now", "Apply", "Home", new { @class = "apply-button" });
+</section>
