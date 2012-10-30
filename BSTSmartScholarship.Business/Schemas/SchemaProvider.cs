@@ -13,7 +13,7 @@
 
 	#endregion
 
-	public class XmlSchemaProvider
+	public class XmlSchemaProvider : ISchemaProvider
 	{
 		public XmlSchema GetSchemaFromResource(String schemaName)
 		{

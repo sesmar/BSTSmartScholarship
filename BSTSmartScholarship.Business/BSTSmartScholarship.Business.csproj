@@ -47,10 +47,12 @@
   <ItemGroup>
     <Compile Include="Applicant.cs" />
     <Compile Include="ApplicantList.cs" />
+    <Compile Include="BSTSmartScholarshipSerializer.cs" />
     <Compile Include="Award.cs" />
     <Compile Include="Enumerations.cs" />
     <Compile Include="ISmartScholarshipContext.cs" />
     <Compile Include="RegexUtility.cs" />
+    <Compile Include="Schemas\ISchemaProvider.cs" />
     <Compile Include="Schemas\SchemaProvider.cs" />
     <Compile Include="SmartScholarshipContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

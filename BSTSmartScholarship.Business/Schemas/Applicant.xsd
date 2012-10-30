@@ -10,7 +10,7 @@
 	<xs:element name="Applicant">
 		<xs:complexType id="ApplicantType">
 			<xs:sequence>
-				<xs:element name="StudentNumber" type="xs:string"/>
+				<xs:element name="StudentNumber" type="StudentNumberType"/>
 				<xs:element name="FirstName" type="xs:string"/>
 				<xs:element name="LastName" type="xs:string"/>
 				<xs:element name="PhoneNumber" type="xs:string"/>
@@ -24,5 +24,11 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+
+	<xs:simpleType name="StudentNumberType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{10}" />
+		</xs:restriction>
+	</xs:simpleType>
 	
 </xs:schema>
