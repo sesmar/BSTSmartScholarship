@@ -1,33 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema id="Applicant"
-    targetNamespace="http://tempuri.org/Applicant.xsd"
+    targetNamespace="http://bstsmartscholarship.sesmar.net/applicant"
     elementFormDefault="qualified"
-    xmlns="http://tempuri.org/Applicant.xsd"
-    xmlns:mstns="http://tempuri.org/Applicant.xsd"
+    xmlns="http://bstsmartscholarship.sesmar.net/applicant"
+    xmlns:mstns="http://bstsmartscholarship.sesmar.net/applicant"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
 >
 
-	<xs:element name="Applicant">
-		<xs:complexType id="ApplicantType">
+	<xs:element name="Applicant" type="ApplicantType" />
+	
+	<xs:complexType name="ApplicantType">
 			<xs:sequence>
 				<xs:element name="StudentNumber" type="StudentNumberType"/>
 				<xs:element name="FirstName" type="xs:string"/>
 				<xs:element name="LastName" type="xs:string"/>
 				<xs:element name="PhoneNumber" type="xs:string"/>
-				<xs:element name="EmailAddress" type="xs:string"/>
-				<xs:element name="Gender" type="xs:int"/>
-				<xs:element name="DateOfBirth" type="xs:string"/>
-				<xs:element name="Status" type="xs:string"/>
-				<xs:element name="CumulativeGPA" type="xs:double"/>
-				<xs:element name="CreditHours" type="xs:int"/>
-				<xs:element name="IsEligible" type="xs:boolean"/>
+				<xs:element name="EmailAddress" type="EmailAddressType"/>
+				<xs:element name="Gender" type="GenderType"/>
+				<xs:element name="DateOfBirth" type="xs:dateTime"/>
+				<xs:element name="Status" type="StatusType"/>
+				<xs:element name="CumulativeGPA" type="GPAType"/>
+				<xs:element name="CreditHours" type="CreditHoursType"/>
+				<xs:element name="IsEligible" type="xs:boolean" nillable="true"/>
 			</xs:sequence>
 		</xs:complexType>
-	</xs:element>
 
 	<xs:simpleType name="StudentNumberType">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="\d{10}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="EmailAddressType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value=".*@.*\.[A-Za-z]{2,4}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="GenderType">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="1" />
+			<xs:maxInclusive value="2" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="StatusType">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="1" />
+			<xs:maxInclusive value="4" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="GPAType">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="4" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CreditHoursType">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="21" />
 		</xs:restriction>
 	</xs:simpleType>
 	
