@@ -7,4 +7,6 @@
 /BSTSmartScholarship.DataAccess/obj
 /BSTSmartScholarship.Sketchflow/bin
 /BSTSmartScholarship.Sketchflow/obj
+/BSTSmartScholarship.UnitTests/bin
+/BSTSmartScholarship.UnitTests/obj
 *.suo

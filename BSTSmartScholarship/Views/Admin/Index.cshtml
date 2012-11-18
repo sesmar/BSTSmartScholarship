@@ -10,9 +10,14 @@
 <section class="applicants">
     @{ foreach (BSTSmartScholarship.Business.Applicant applicant in Model) {
           <section class="applicant">
-              <p>@(applicant.FirstName)</p>
-              <p>@(BSTSmartScholarship.Business.RegexUtility.FormatPhone(applicant.PhoneNumber))</p>
-              <p>@(applicant.EmailAddress)</p>
+              <div>
+                <p class="name">@(applicant.FirstName)</p>
+                <p>@(BSTSmartScholarship.Business.RegexUtility.FormatPhone(applicant.PhoneNumber))</p>
+                <p>@(applicant.EmailAddress)</p>
+              </div>
+              <div>
+                  <input type="submit" value="Verify with Registrar" />
+              </div>
           </section>
           }}
 </section>

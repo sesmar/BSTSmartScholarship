@@ -319,6 +319,24 @@ section.right-column
 	float: left;
 }
 
+section.applicant
+{
+	max-width: 924px;
+	border: 2px solid #c8c8c8;
+	margin: 16px 0px 8px;
+	padding: 0px 8px;
+}
+	section.applicant p
+	{
+		margin: 8px;
+	}
+
+	section.applicant p.name
+	{
+		font-size: 1.3em;
+		font-weight: bold;
+	}
+
 a.apply-button
 {
 	background: url(../Images/apply_now.png) no-repeat top left;
@@ -328,10 +346,10 @@ a.apply-button
 	text-indent: -9999px;
 }
 
-a.apply-button:hover
-{
-	background: url(../Images/apply_now_over.png) no-repeat top left;
-}
+	a.apply-button:hover
+	{
+		background: url(../Images/apply_now_over.png) no-repeat top left;
+	}
 
 
 /* ordered list */
