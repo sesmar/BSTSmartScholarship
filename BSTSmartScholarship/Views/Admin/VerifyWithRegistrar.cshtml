@@ -1,0 +1,23 @@
+﻿@model BSTSmartScholarship.Business.Applicant
+
+<fieldset>
+    <legend>Applicant</legend>
+    <div class="display-field">
+        @(String.Format("{0} {1}", Model.FirstName, Model.LastName))
+    </div>
+    <div class="display-field">
+        @(((BSTSmartScholarship.Business.Status)Model.Status).ToString())
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreditHours)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CumulativeGPA)
+    </div>
+    <div class="display-field">
+        @(((BSTSmartScholarship.Business.Gender)Model.Gender).ToString())
+    </div>
+    <div class="display-field">
+        @(Model.DateOfBirth.ToShortDateString())
+    </div>
+</fieldset>

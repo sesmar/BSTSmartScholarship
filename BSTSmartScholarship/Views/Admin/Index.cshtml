@@ -11,17 +11,17 @@
             autoOpen: false,
             width: 400,
             resizable: false,
-            modal: true
+            modal: true,
+            title: "Verify Applicant"
         });
-
-        $('#show-modal').click(function() {
-            $('#my-dialog').load("@Url.Action("VerifyWithRegistrar")", function() {
-                $(this).dialog('open');
-            });
-            return false;
-        });
-
     });
+
+    function showModal(action) {
+        $('#my-dialog').load(action, function() {
+            $(this).dialog('open');
+        });
+        return false;
+    }
 </script>
 
 <h2>Verify Applicants</h2>
@@ -36,7 +36,8 @@
                 <p>@(applicant.EmailAddress)</p>
               </div>
               <div style="display: inline-block; float: right;">
-                  <input id="show-modal" type="submit" value="Verify with Registrar" />
+                  @{String actionString = String.Format("\"{0}\"", Url.Action("VerifyWithRegistrar", new { sn = Model.FirstOrDefault().StudentNumber }));
+                  <input id="show-modal" type="submit" value="Verify with Registrar" onclick='showModal(@(actionString));' />}
               </div>
           </section>
           }}

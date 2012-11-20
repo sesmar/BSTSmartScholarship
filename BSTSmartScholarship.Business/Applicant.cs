@@ -73,7 +73,7 @@
 
 		#region "Factory Methods"
 
-		public Applicant GetApplicant(String studentNumber)
+		public static Applicant GetApplicant(String studentNumber)
 		{
 			Applicant applicant = SmartScholarshipContext.Current.Applicants.FirstOrDefault(a => a.StudentNumber.Equals(studentNumber, StringComparison.OrdinalIgnoreCase));
 			applicant.IsNew = false;

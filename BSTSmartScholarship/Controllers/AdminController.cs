@@ -22,9 +22,11 @@
 		}
 
 		[Authorize]
-		public ActionResult VerifyWithRegistrar()
+		public ActionResult VerifyWithRegistrar(String sn)
 		{
-			return Content("<div>Hello world</div>", "text/html");
+			Applicant applicant = Applicant.GetApplicant(sn);
+			return PartialView(applicant);
+			//			return Content(String.Format("<div>{0}</div>", applicant.FirstName), "text/html");
 		}
 	}
 }
