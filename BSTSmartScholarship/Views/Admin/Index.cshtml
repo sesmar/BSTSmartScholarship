@@ -5,9 +5,29 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<script type="text/javascript">
+    $(function () {
+        $('#my-dialog').dialog({
+            autoOpen: false,
+            width: 400,
+            resizable: false,
+            modal: true
+        });
+
+        $('#show-modal').click(function() {
+            $('#my-dialog').load("@Url.Action("VerifyWithRegistrar")", function() {
+                $(this).dialog('open');
+            });
+            return false;
+        });
+
+    });
+</script>
+
 <h2>Verify Applicants</h2>
 
 <section class="applicants">
+    <div id="my-dialog"></div>
     @{ foreach (BSTSmartScholarship.Business.Applicant applicant in Model) {
           <section class="applicant">
               <div style="display: inline-block; max-width: 924px;">
@@ -16,7 +36,7 @@
                 <p>@(applicant.EmailAddress)</p>
               </div>
               <div style="display: inline-block; float: right;">
-                  <input type="submit" value="Verify with Registrar" />
+                  <input id="show-modal" type="submit" value="Verify with Registrar" />
               </div>
           </section>
           }}

@@ -20,5 +20,11 @@
 		{
 			return View(ApplicantList.GetList());
 		}
+
+		[Authorize]
+		public ActionResult VerifyWithRegistrar()
+		{
+			return Content("<div>Hello world</div>", "text/html");
+		}
 	}
 }
