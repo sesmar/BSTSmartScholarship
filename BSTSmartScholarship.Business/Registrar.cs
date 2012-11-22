@@ -19,7 +19,7 @@
 			BSTSmartScholarshipSerializer<Applicant> applicantSerializer = new BSTSmartScholarshipSerializer<Applicant>();
 			Applicant applicant = applicantSerializer.Deserialize(applicantDoc);
 
-			Student student = new Student();
+			Student student = Student.GetStudent(applicant.StudentNumber);
 			BSTSmartScholarshipSerializer<Student> studentSerializer = new BSTSmartScholarshipSerializer<Student>();
 			XmlDocument studentDoc = studentSerializer.Serialize(student);
 

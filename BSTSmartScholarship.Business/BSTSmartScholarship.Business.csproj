@@ -52,6 +52,7 @@
     <Compile Include="Enumerations.cs" />
     <Compile Include="ISmartScholarshipContext.cs" />
     <Compile Include="RegexUtility.cs" />
+    <Compile Include="Registrar.cs" />
     <Compile Include="Schemas\ISchemaProvider.cs" />
     <Compile Include="Schemas\SchemaProvider.cs" />
     <Compile Include="SmartScholarshipContext.cs" />

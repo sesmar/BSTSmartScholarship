@@ -1,23 +1,49 @@
-﻿@model BSTSmartScholarship.Business.Applicant
+﻿@model BSTSmartScholarship.Models.VerifyModel
 
-<fieldset>
-    <legend>Applicant</legend>
-    <div class="display-field">
-        @(String.Format("{0} {1}", Model.FirstName, Model.LastName))
-    </div>
-    <div class="display-field">
-        @(((BSTSmartScholarship.Business.Status)Model.Status).ToString())
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.CreditHours)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.CumulativeGPA)
-    </div>
-    <div class="display-field">
-        @(((BSTSmartScholarship.Business.Gender)Model.Gender).ToString())
-    </div>
-    <div class="display-field">
-        @(Model.DateOfBirth.ToShortDateString())
-    </div>
-</fieldset>
+<section>
+    <fieldset>
+        <legend>Applicant</legend>
+        <div class="display-field">
+            @(String.Format("{0} {1}", Model.Applicant.FirstName, Model.Applicant.LastName))
+        </div>
+        <div class="display-field">
+            @(((BSTSmartScholarship.Business.Status)Model.Applicant.Status).ToString())
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Applicant.CreditHours)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Applicant.CumulativeGPA)
+        </div>
+        <div class="display-field">
+            @(((BSTSmartScholarship.Business.Gender)Model.Applicant.Gender).ToString())
+        </div>
+        <div class="display-field">
+            @(Model.Applicant.DateOfBirth.ToShortDateString())
+        </div>
+    </fieldset>
+</section>
+
+<section>
+    <fieldset>
+        <legend>Applicant</legend>
+        <div class="display-field">
+            @(String.Format("{0} {1}", Model.Student.FirstName, Model.Student.LastName))
+        </div>
+        <div class="display-field">
+            @(((BSTSmartScholarship.Business.Status)Model.Student.Status).ToString())
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Student.CreditHours)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Student.CumulativeGPA)
+        </div>
+        <div class="display-field">
+            
+        </div>
+        <div class="display-field">
+            @(Model.Student.DateOfBirth.ToShortDateString())
+        </div>
+    </fieldset>
+</section>
