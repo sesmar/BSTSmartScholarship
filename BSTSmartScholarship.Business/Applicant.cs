@@ -69,6 +69,8 @@
 
 		public Boolean? IsEligible { get; set; }
 
+		public Boolean? IsVerified { get; set; }
+
 		#endregion
 
 		#region "Factory Methods"

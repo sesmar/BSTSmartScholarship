@@ -22,6 +22,7 @@
 				<xs:element name="CumulativeGPA" type="GPAType"/>
 				<xs:element name="CreditHours" type="CreditHoursType"/>
 				<xs:element name="IsEligible" type="xs:boolean" nillable="true"/>
+				<xs:element name="IsVerified" type="xs:boolean" nillable="true"/>
 			</xs:sequence>
 		</xs:complexType>
 

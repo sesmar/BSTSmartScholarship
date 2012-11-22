@@ -7,7 +7,7 @@
 	using System.Linq;
 	using System.Web;
 	using System.Web.Mvc;
-
+	using System.Xml;
 	using BSTSmartScholarship.Business;
 	#endregion
 
@@ -18,15 +18,27 @@
 		[Authorize]
 		public ActionResult Index()
 		{
-			return View(ApplicantList.GetList());
+			return View(ApplicantList.GetList(a => !a.IsVerified.GetValueOrDefault(false)));
 		}
 
 		[Authorize]
 		public ActionResult VerifyWithRegistrar(String sn)
 		{
 			Applicant applicant = Applicant.GetApplicant(sn);
-			return PartialView(applicant);
-			//			return Content(String.Format("<div>{0}</div>", applicant.FirstName), "text/html");
+			
+			if (applicant != null)
+			{
+				BSTSmartScholarshipSerializer<Applicant> applicantSerializer = new BSTSmartScholarshipSerializer<Applicant>();
+				XmlDocument applicantDoc = applicantSerializer.Serialize(applicant);
+				Registrar registrar = new Registrar();
+				XmlDocument studentDoc = registrar.VerifyApplicant(applicantDoc);
+				BSTSmartScholarshipSerializer<Student> studentSerializer = new BSTSmartScholarshipSerializer<Student>();
+				Student student = studentSerializer.Deserialize(studentDoc);
+
+				return PartialView(applicant);
+			}
+			
+			return Content("<div>Invalid Applicant</div>", "text/html");
 		}
 	}
 }

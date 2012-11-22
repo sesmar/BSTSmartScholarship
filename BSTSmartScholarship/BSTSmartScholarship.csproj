@@ -176,6 +176,10 @@
     <Compile Include="Migrations\201210212116529_UpdatesForApplicant.Designer.cs">
       <DependentUpon>201210212116529_UpdatesForApplicant.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201211220311095_Add_IsVerified_For_Applicant.cs" />
+    <Compile Include="Migrations\201211220311095_Add_IsVerified_For_Applicant.Designer.cs">
+      <DependentUpon>201211220311095_Add_IsVerified_For_Applicant.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\SelectLists.cs" />
@@ -314,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201210212116529_UpdatesForApplicant.resx">
       <DependentUpon>201210212116529_UpdatesForApplicant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201211220311095_Add_IsVerified_For_Applicant.resx">
+      <DependentUpon>201211220311095_Add_IsVerified_For_Applicant.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -19,5 +19,13 @@
 				return cdx.Applicants.ToList();
 			}
 		}
+
+		public static IEnumerable<Applicant> GetList(Func<Applicant, bool> expression)
+		{
+			using (ISmartScholarshipContext cdx = SmartScholarshipContext.Current)
+			{
+				return cdx.Applicants.Where(expression).ToList();
+			}
+		}
 	}
 }
