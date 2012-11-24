@@ -238,6 +238,36 @@ ul#menu
 				text-decoration: none;
 			}
 
+/* menu
+----------------------------------------------------------*/
+ul#submenu
+{
+	font-size: 1.3em;
+	font-weight: 600;
+	margin: 0 0 5px;
+	padding: 0;
+	text-align: left;
+}
+
+	ul#submenu li
+	{
+		display: inline;
+		list-style: none;
+		padding-left: 15px;
+	}
+
+		ul#submenu li a
+		{
+			background: none;
+			color: #999;
+			text-decoration: none;
+		}
+
+			ul#submenu li a:hover
+			{
+				color: #333;
+				text-decoration: none;
+			}
 
 /* page elements
 ----------------------------------------------------------*/
@@ -252,6 +282,53 @@ section.collegiate-info
 	/*display:inline-block;*/
 	float: left;
 	margin-left: 32px;
+}
+
+section.verify-applicant
+{
+	display: inline-block;
+	min-width: 282px;
+	vertical-align: top;
+}
+
+section.verify-student
+{
+	display: inline-block;
+	min-width: 282px;
+	vertical-align: top;
+}
+
+	section.verify-applicant div.display-field,
+	section.verify-student div.display-field
+	{
+		padding: 4px;
+		width: auto;
+		background-color: #27dd27;
+	}
+
+	section.verify-applicant div.display-header,
+	section.verify-student div.display-header
+	{
+		padding: 4px;
+		width: auto;
+		text-align: center;
+		font-weight: bold;
+	}
+
+	section.verify-applicant div.mismatch,
+	section.verify-student div.mismatch
+	{
+		background-color: #fa4747;
+	}
+
+div.verify-buttons
+{
+	float: right;
+}
+
+div.verify-buttons a.button
+{
+	margin-right: 1px;
 }
 
 /* featured */
@@ -597,7 +674,8 @@ input[type="checkbox"]
 
 input[type="submit"],
 input[type="button"],
-button
+button,
+a.button
 {
 	background-color: #d3dce0;
 	border: 1px solid #787878;
@@ -607,6 +685,13 @@ button
 	padding: 7px;
 	margin-right: 8px;
 	width: auto;
+}
+
+a.button
+{
+	text-decoration: none;
+	display: inline-block;
+	margin-top: 8px;
 }
 
 td input[type="submit"],

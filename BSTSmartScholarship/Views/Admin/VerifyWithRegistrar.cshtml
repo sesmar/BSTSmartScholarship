@@ -1,49 +1,71 @@
 ﻿@model BSTSmartScholarship.Models.VerifyModel
 
-<section>
+<section class="verify-applicant">
     <fieldset>
         <legend>Applicant</legend>
-        <div class="display-field">
+        <div class="display-header">
+            From Application
+        </div>
+        <div class="display-field @{if (!String.Format("{0} {1}", Model.Applicant.FirstName, Model.Applicant.LastName).Equals(String.Format("{0} {1}", Model.Student.FirstName, Model.Student.LastName), StringComparison.OrdinalIgnoreCase))
+                                    { <text>mismatch</text> }}">
             @(String.Format("{0} {1}", Model.Applicant.FirstName, Model.Applicant.LastName))
         </div>
-        <div class="display-field">
+        <div class="display-field @{if (Model.Applicant.Status != Model.Student.Status)
+                                    { <text>mismatch</text> }}">
             @(((BSTSmartScholarship.Business.Status)Model.Applicant.Status).ToString())
         </div>
-        <div class="display-field">
+        <div class="display-field @{if (Model.Applicant.CreditHours != Model.Student.CreditHours)
+                                    { <text>mismatch</text> }}">
             @Html.DisplayFor(model => model.Applicant.CreditHours)
         </div>
-        <div class="display-field">
+        <div class="display-field @{if (Model.Applicant.CumulativeGPA != Model.Student.CumulativeGPA)
+                                    { <text>mismatch</text> }}">
             @Html.DisplayFor(model => model.Applicant.CumulativeGPA)
         </div>
-        <div class="display-field">
+        <div class="display-field @{if (Model.Applicant.Gender != Model.Student.Gender)
+                                    { <text>mismatch</text> }}">
             @(((BSTSmartScholarship.Business.Gender)Model.Applicant.Gender).ToString())
         </div>
-        <div class="display-field">
+        <div class="display-field @{if (Model.Applicant.DateOfBirth != Model.Student.DateOfBirth)
+                                    { <text>mismatch</text> }}">
             @(Model.Applicant.DateOfBirth.ToShortDateString())
         </div>
     </fieldset>
 </section>
 
-<section>
+<section class="verify-student">
     <fieldset>
-        <legend>Applicant</legend>
-        <div class="display-field">
+        <legend>Student</legend>
+        <div class="display-header">
+            From Registrar
+        </div>
+        <div class="display-field @{if (!String.Format("{0} {1}", Model.Applicant.FirstName, Model.Applicant.LastName).Equals(String.Format("{0} {1}", Model.Student.FirstName, Model.Student.LastName), StringComparison.OrdinalIgnoreCase))
+                                    { <text>mismatch</text> }}">
             @(String.Format("{0} {1}", Model.Student.FirstName, Model.Student.LastName))
         </div>
-        <div class="display-field">
+        <div class="display-field @{if (Model.Applicant.Status != Model.Student.Status)
+                                    { <text>mismatch</text> }}">
             @(((BSTSmartScholarship.Business.Status)Model.Student.Status).ToString())
         </div>
-        <div class="display-field">
+        <div class="display-field @{if (Model.Applicant.CreditHours != Model.Student.CreditHours)
+                                    { <text>mismatch</text> }}">
             @Html.DisplayFor(model => model.Student.CreditHours)
         </div>
-        <div class="display-field">
+        <div class="display-field @{if (Model.Applicant.CumulativeGPA != Model.Student.CumulativeGPA)
+                                    { <text>mismatch</text> }}">
             @Html.DisplayFor(model => model.Student.CumulativeGPA)
         </div>
-        <div class="display-field">
-            
+        <div class="display-field @{if (Model.Applicant.Gender != Model.Student.Gender)
+                                    { <text>mismatch</text> }}">
+            @(((BSTSmartScholarship.Business.Gender)Model.Student.Gender).ToString())
         </div>
-        <div class="display-field">
+        <div class="display-field @{if (Model.Applicant.DateOfBirth != Model.Student.DateOfBirth)
+                                    { <text>mismatch</text> }}">
             @(Model.Student.DateOfBirth.ToShortDateString())
         </div>
     </fieldset>
 </section>
+<div class="verify-buttons">
+    <a href='@Url.Action("DeclineApplicant", "Admin", new { sn = Model.Applicant.StudentNumber })' class="button">Decline</a>
+    <a href='@Url.Action("VerifyApplicant", "Admin", new { sn = Model.Applicant.StudentNumber })' class="button">Verify</a>
+</div>

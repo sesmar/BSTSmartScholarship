@@ -14,8 +14,8 @@
 	{
 		private static List<Student> StudentList= new List<Student>()
 			{
-				new Student { StudentNumber = "88634351", FirstName = "Sebastian", LastName = "Sims", Status = 1, CreditHours = 12, CumulativeGPA = 3.86, DateOfBirth = new DateTime(2010, 2, 15)  },
-				new Student { StudentNumber = "88634352", FirstName = "Christopher", LastName = "Sims", Status = 4, CreditHours = 6, CumulativeGPA = 3.6, DateOfBirth = new DateTime(1982, 7, 13)  },
+				new Student { StudentNumber = "88634351", FirstName = "Sebastian", LastName = "Sims", Status = 1, CreditHours = 12, CumulativeGPA = 3.86, DateOfBirth = new DateTime(2010, 2, 15), Gender = 1 },
+				new Student { StudentNumber = "88634352", FirstName = "Christopher", LastName = "Sims", Status = 4, CreditHours = 6, CumulativeGPA = 3.6, DateOfBirth = new DateTime(1982, 7, 13), Gender = 1 },
 			};
 
 		#region "Public Properties"
@@ -27,6 +27,7 @@
 		public Double CumulativeGPA { get; set; }
 		public Int32 CreditHours { get; set; }
 		public DateTime DateOfBirth { get; set; }
+		public Int32 Gender { get; set; }
 
 		#endregion
 

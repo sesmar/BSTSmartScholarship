@@ -1,28 +1,9 @@
 ﻿@model IEnumerable<BSTSmartScholarship.Business.Applicant>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "PendingReview";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<script type="text/javascript">
-    $(function () {
-        $('#my-dialog').dialog({
-            autoOpen: false,
-            width: 600,
-            resizable: false,
-            modal: true,
-            title: "Verify Applicant"
-        });
-    });
-
-    function showModal(action) {
-        $('#my-dialog').load(action, function() {
-            $(this).dialog('open');
-        });
-        return false;
-    }
-</script>
 
 <nav>
     <ul id="submenu">
@@ -32,7 +13,7 @@
     </ul>
 </nav>
 
-<h2>Verify Applicants</h2>
+<h2>Pending Review</h2>
 
 <section class="applicants">
     <div id="my-dialog"></div>
@@ -44,8 +25,7 @@
                 <p>@(applicant.EmailAddress)</p>
             </div>
             <div style="display: inline-block; float: right;">
-                @{String actionString = String.Format("\"{0}\"", Url.Action("VerifyWithRegistrar", new { sn = applicant.StudentNumber }));
-                    <input type="submit" value="Verify with Registrar" onclick='showModal(@(actionString));' />}
+                <input type="submit" value="Mark as Eligible" />
             </div>
         </section>
           }}

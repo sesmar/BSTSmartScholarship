@@ -10,6 +10,7 @@
 	using System.Xml;
 	using BSTSmartScholarship.Business;
 	using BSTSmartScholarship.Models;
+
 	#endregion
 
 	public class AdminController : Controller
@@ -19,7 +20,7 @@
 		[Authorize]
 		public ActionResult Index()
 		{
-			return View(ApplicantList.GetList(a => !a.IsVerified.GetValueOrDefault(false)));
+			return View(ApplicantList.GetList(a => !a.IsVerified == null));
 		}
 
 		[Authorize]
@@ -41,6 +42,26 @@
 			}
 			
 			return Content("<div>Invalid Applicant</div>", "text/html");
+		}
+
+		[Authorize]
+		public ActionResult PendingReview()
+		{
+			return View(ApplicantList.GetList(a => a.IsVerified.GetValueOrDefault(false) && a.IsEligible == null));
+		}
+
+		[Authorize]
+		public ActionResult DeclineApplicant(String sn)
+		{
+			Applicant.DeclineApplicant(sn);
+			return RedirectToAction("Index", "Admin");
+		}
+
+		[Authorize]
+		public ActionResult VerifyApplicant(String sn)
+		{
+			Applicant.VerifyApplicant(sn);
+			return RedirectToAction("Index", "Admin");
 		}
 	}
 }

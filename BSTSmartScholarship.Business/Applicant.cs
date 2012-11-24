@@ -106,6 +106,50 @@
 			return applicant;
 		}
 
+		public static void VerifyApplicant(String studentNumber)
+		{
+			using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
+			{
+				Applicant applicant = sdx.Applicants.FirstOrDefault(a => a.StudentNumber.Equals(studentNumber, StringComparison.OrdinalIgnoreCase));
+				applicant.IsVerified = true;
+
+				sdx.SaveChanges();
+			}
+		}
+
+		public static void DeclineApplicant(String studentNumber)
+		{
+			using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
+			{
+				Applicant applicant = sdx.Applicants.FirstOrDefault(a => a.StudentNumber.Equals(studentNumber, StringComparison.OrdinalIgnoreCase));
+				applicant.IsVerified = false;
+
+				sdx.SaveChanges();
+			}
+		}
+
+		public static void MarkAsEligible(String studentNumber)
+		{
+			using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
+			{
+				Applicant applicant = sdx.Applicants.FirstOrDefault(a => a.StudentNumber.Equals(studentNumber, StringComparison.OrdinalIgnoreCase));
+				applicant.IsEligible = true;
+
+				sdx.SaveChanges();
+			}
+		}
+
+		public static void MarkAsIneligible(String studentNumber)
+		{
+			using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
+			{
+				Applicant applicant = sdx.Applicants.FirstOrDefault(a => a.StudentNumber.Equals(studentNumber, StringComparison.OrdinalIgnoreCase));
+				applicant.IsEligible = false;
+
+				sdx.SaveChanges();
+			}
+		}
+
 		public Applicant()
 		{
 			this.IsNew = true;
