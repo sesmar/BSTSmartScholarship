@@ -414,6 +414,13 @@ section.applicant
 		font-weight: bold;
 	}
 
+	section.applicant p.status
+	{
+		font-size: 1.3em;
+		font-weight: bold;
+		font-style: italic;
+	}
+
 a.apply-button
 {
 	background: url(../Images/apply_now.png) no-repeat top left;

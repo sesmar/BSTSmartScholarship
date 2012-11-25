@@ -71,6 +71,17 @@
 
 		public Boolean? IsVerified { get; set; }
 
+		public List<Vote> Votes
+		{
+			get
+			{
+				using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
+				{
+					return sdx.Votes.Where(v => v.StudentNumber.Equals(StudentNumber, StringComparison.OrdinalIgnoreCase)).ToList();
+				}
+			}
+		}
+
 		#endregion
 
 		#region "Factory Methods"
@@ -112,6 +123,7 @@
 			{
 				Applicant applicant = sdx.Applicants.FirstOrDefault(a => a.StudentNumber.Equals(studentNumber, StringComparison.OrdinalIgnoreCase));
 				applicant.IsVerified = true;
+				applicant.IsEligible = true;
 
 				sdx.SaveChanges();
 			}
@@ -123,6 +135,7 @@
 			{
 				Applicant applicant = sdx.Applicants.FirstOrDefault(a => a.StudentNumber.Equals(studentNumber, StringComparison.OrdinalIgnoreCase));
 				applicant.IsVerified = false;
+				applicant.IsEligible = false;
 
 				sdx.SaveChanges();
 			}
@@ -226,5 +239,21 @@
 		}
 
 		#endregion
+
+		public static void VoteForApplicant(string sn, String userId)
+		{
+			using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
+			{
+				Vote vote = sdx.Votes.FirstOrDefault(v => v.StudentNumber.Equals(sn, StringComparison.OrdinalIgnoreCase) && v.UserId == userId);
+
+				if (vote == null)
+				{
+					vote = new Vote() { StudentNumber = sn, UserId = userId };
+					sdx.Votes.Add(vote);
+				}
+
+				sdx.SaveChanges();
+			}
+		}
 	}
 }

@@ -4,19 +4,14 @@
 
 	using System;
 	using System.Collections.Generic;
-	using System.Data.Entity;
 	using System.Linq;
 	using System.Text;
 	using System.Threading.Tasks;
 
 	#endregion
 
-	public interface ISmartScholarshipContext : IDisposable
+	public interface IEmailService
 	{
-		IDbSet<Applicant> Applicants { get; }
-		//IDbSet<Award> Awards { get; }
-		IDbSet<Vote> Votes { get; }
-
-		Int32 SaveChanges();
+		void SendEmail(String to, String subject, String body);
 	}
 }

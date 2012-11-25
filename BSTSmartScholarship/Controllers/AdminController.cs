@@ -5,6 +5,7 @@
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
+	using System.Security.Principal;
 	using System.Web;
 	using System.Web.Mvc;
 	using System.Xml;
@@ -40,14 +41,20 @@
 
 				return PartialView(model);
 			}
-			
+
 			return Content("<div>Invalid Applicant</div>", "text/html");
 		}
 
 		[Authorize]
 		public ActionResult PendingReview()
 		{
-			return View(ApplicantList.GetList(a => a.IsVerified.GetValueOrDefault(false) && a.IsEligible == null));
+			return View(ApplicantList.GetList(a => a.IsVerified.GetValueOrDefault(false) && a.IsEligible.GetValueOrDefault(false)));
+		}
+
+		[Authorize]
+		public ActionResult Awarded()
+		{
+			return View(ApplicantList.GetList(a => a.IsVerified.GetValueOrDefault(false) && a.IsEligible.GetValueOrDefault(false)));
 		}
 
 		[Authorize]
@@ -62,6 +69,19 @@
 		{
 			Applicant.VerifyApplicant(sn);
 			return RedirectToAction("Index", "Admin");
+		}
+
+		[Authorize]
+		public ActionResult VoteForApplicant(String sn)
+		{
+			IIdentity identity = this.User.Identity;
+
+			if (identity.IsAuthenticated)
+			{
+				Applicant.VoteForApplicant(sn, identity.Name);
+			}
+
+			return RedirectToAction("Awarded", "Admin");
 		}
 	}
 }
