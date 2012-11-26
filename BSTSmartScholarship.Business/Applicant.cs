@@ -71,6 +71,7 @@
 
 		public Boolean? IsVerified { get; set; }
 
+		[XmlIgnore]
 		public List<Vote> Votes
 		{
 			get
@@ -134,19 +135,18 @@
 			using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
 			{
 				Applicant applicant = sdx.Applicants.FirstOrDefault(a => a.StudentNumber.Equals(studentNumber, StringComparison.OrdinalIgnoreCase));
-				applicant.IsVerified = false;
-				applicant.IsEligible = false;
+				applicant.IsVerified = true;
 
 				sdx.SaveChanges();
 			}
 		}
 
-		public static void MarkAsEligible(String studentNumber)
+		public static void RejectApplicant(String studentNumber)
 		{
 			using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
 			{
 				Applicant applicant = sdx.Applicants.FirstOrDefault(a => a.StudentNumber.Equals(studentNumber, StringComparison.OrdinalIgnoreCase));
-				applicant.IsEligible = true;
+				applicant.IsEligible = false;
 
 				sdx.SaveChanges();
 			}
@@ -169,6 +169,11 @@
 		}
 
 		#endregion
+
+		public override string ToString()
+		{
+			return "Applicant";
+		}
 
 		#region "Save (Insert/Update) Methods"
 

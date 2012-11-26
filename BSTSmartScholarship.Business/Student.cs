@@ -12,10 +12,15 @@
 
 	public class Student
 	{
-		private static List<Student> StudentList= new List<Student>()
+		internal static List<Student> StudentList= new List<Student>()
 			{
-				new Student { StudentNumber = "88634351", FirstName = "Sebastian", LastName = "Sims", Status = 1, CreditHours = 12, CumulativeGPA = 3.86, DateOfBirth = new DateTime(2010, 2, 15), Gender = 1 },
-				new Student { StudentNumber = "88634352", FirstName = "Christopher", LastName = "Sims", Status = 4, CreditHours = 6, CumulativeGPA = 3.6, DateOfBirth = new DateTime(1982, 7, 13), Gender = 1 },
+				new Student { StudentNumber = "88634351", FirstName = "Sebastian", LastName = "Sims", Status = 1, CreditHours = 12, CumulativeGPA = 3.89, DateOfBirth = new DateTime(2010, 2, 15), Gender = 1, CurrentGPA = 3.9 },
+				new Student { StudentNumber = "88634352", FirstName = "Christopher", LastName = "Sims", Status = 4, CreditHours = 6, CumulativeGPA = 3.6, DateOfBirth = new DateTime(1982, 7, 13), Gender = 1, CurrentGPA = 3.8 },
+				new Student { StudentNumber = "88634353", FirstName = "Cassandra", LastName = "Sims", Status = 3, CreditHours = 15, CumulativeGPA = 3.9, DateOfBirth = new DateTime(1982, 4, 1), Gender = 2, CurrentGPA = 4.0 },
+				new Student { StudentNumber = "88634354", FirstName = "Chloe", LastName = "Sims", Status = 1, CreditHours = 12, CumulativeGPA = 3.89, DateOfBirth = new DateTime(2012, 3, 2), Gender = 2, CurrentGPA = 3.9 },
+				new Student { StudentNumber = "88634355", FirstName = "Bob", LastName = "Golembiewski", Status = 2, CreditHours = 12, CumulativeGPA = 3.0, DateOfBirth = new DateTime(1992, 5, 23), Gender = 1, CurrentGPA = 3.5 },
+				new Student { StudentNumber = "88634356", FirstName = "Denise", LastName = "Golembiewski", Status = 1, CreditHours = 15, CumulativeGPA = 3.34, DateOfBirth = new DateTime(1993, 4, 16), Gender = 2, CurrentGPA = 3.6 },
+				new Student { StudentNumber = "88634357", FirstName = "Zoey", LastName = "Kashich", Status = 1, CreditHours = 12, CumulativeGPA = 3.89, DateOfBirth = new DateTime(2010, 1, 18), Gender = 2, CurrentGPA = 3.9 },
 			};
 
 		#region "Public Properties"
@@ -28,6 +33,7 @@
 		public Int32 CreditHours { get; set; }
 		public DateTime DateOfBirth { get; set; }
 		public Int32 Gender { get; set; }
+		public Double CurrentGPA { get; set; }
 
 		#endregion
 
@@ -39,5 +45,10 @@
 		}
 
 		#endregion
+
+		public override string ToString()
+		{
+			return "Student";
+		}
 	}
 }

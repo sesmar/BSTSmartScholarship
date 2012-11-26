@@ -31,7 +31,14 @@
 		{
 			applicant.Save();
 
-			return RedirectToAction("Index");
+			return RedirectToAction("Confirmation");
+		}
+
+		public ActionResult Confirmation()
+		{
+			ViewBag.Message = "Thank you for apply for the B.S.T. Smart Scholarship.";
+
+			return View();
 		}
 	}
 }

@@ -14,7 +14,7 @@
 	public interface ISmartScholarshipContext : IDisposable
 	{
 		IDbSet<Applicant> Applicants { get; }
-		//IDbSet<Award> Awards { get; }
+		IDbSet<Award> Awards { get; }
 		IDbSet<Vote> Votes { get; }
 
 		Int32 SaveChanges();

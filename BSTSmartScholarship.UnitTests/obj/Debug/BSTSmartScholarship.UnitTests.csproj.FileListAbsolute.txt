@@ -25,3 +25,12 @@ E:\Projects\GitHub\BSTSmartScholarship\BSTSmartScholarship.UnitTests\bin\Debug\E
 E:\Projects\GitHub\BSTSmartScholarship\BSTSmartScholarship.UnitTests\obj\Debug\BSTSmartScholarship.UnitTests.csprojResolveAssemblyReference.cache
 E:\Projects\GitHub\BSTSmartScholarship\BSTSmartScholarship.UnitTests\obj\Debug\BSTSmartScholarship.UnitTests.dll
 E:\Projects\GitHub\BSTSmartScholarship\BSTSmartScholarship.UnitTests\obj\Debug\BSTSmartScholarship.UnitTests.pdb
+C:\Users\csims\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.UnitTests\bin\Debug\BSTSmartScholarship.UnitTests.dll
+C:\Users\csims\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.UnitTests\bin\Debug\BSTSmartScholarship.UnitTests.pdb
+C:\Users\csims\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.UnitTests\bin\Debug\BSTSmartScholarship.Business.dll
+C:\Users\csims\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.UnitTests\bin\Debug\EntityFramework.dll
+C:\Users\csims\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.UnitTests\bin\Debug\BSTSmartScholarship.Business.pdb
+C:\Users\csims\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.UnitTests\bin\Debug\EntityFramework.xml
+C:\Users\csims\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.UnitTests\obj\Debug\BSTSmartScholarship.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\csims\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.UnitTests\obj\Debug\BSTSmartScholarship.UnitTests.dll
+C:\Users\csims\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.UnitTests\obj\Debug\BSTSmartScholarship.UnitTests.pdb

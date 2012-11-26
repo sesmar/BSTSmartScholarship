@@ -21,10 +21,10 @@
 		{
 			XmlDocument applicantXml = new XmlDocument();
 			XmlSerializerNamespaces xmlns = new XmlSerializerNamespaces();
-			xmlns.Add(string.Empty, "http://bstsmartscholarship.sesmar.net/applicant");
+			xmlns.Add(string.Empty, String.Format("http://bstsmartscholarship.sesmar.net/{0}", serializable.ToString().ToLower()));
 			xmlns.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
 
-			XmlSerializer serializer = new XmlSerializer(typeof(T), "http://bstsmartscholarship.sesmar.net/applicant");
+			XmlSerializer serializer = new XmlSerializer(typeof(T), String.Format("http://bstsmartscholarship.sesmar.net/{0}", serializable.ToString().ToLower()));
 			MemoryStream stream = new MemoryStream();
 
 			serializer.Serialize(stream, serializable, xmlns);
@@ -42,8 +42,8 @@
 		public T Deserialize(XmlDocument deserializable)
 		{
 			T deserialized = new T();
-			
-			XmlSerializer serializer = new XmlSerializer(typeof(T), "http://bstsmartscholarship.sesmar.net/applicant");
+
+			XmlSerializer serializer = new XmlSerializer(typeof(T), String.Format("http://bstsmartscholarship.sesmar.net/{0}", deserialized.ToString().ToLower()));
 			MemoryStream stream = new MemoryStream();
 			
 			using (StreamWriter writer = new StreamWriter(stream))

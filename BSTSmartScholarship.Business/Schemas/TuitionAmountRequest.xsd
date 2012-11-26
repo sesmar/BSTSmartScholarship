@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TuitionAmountRequest"
+    targetNamespace="http://bstsmartscholarship.sesmar.net/tuitionamountrequest"
+    elementFormDefault="qualified"
+    xmlns="http://bstsmartscholarship.sesmar.net/tuitionamountrequest"
+    xmlns:mstns="http://bstsmartscholarship.sesmar.net/tuitionamountrequest"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+
+	<xs:element name="TuitionAmountRequest" type="TuitionAmountRequestType" />
+
+	<xs:complexType name="TuitionAmountRequestType">
+		<xs:sequence>
+			<xs:element name="StudentNumber" type="StudentNumberType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="StudentNumberType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{8}" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+</xs:schema>

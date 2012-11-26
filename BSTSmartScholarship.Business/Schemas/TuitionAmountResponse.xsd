@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TuitionAmountResponse"
+    targetNamespace="http://bstsmartscholarship.sesmar.net/tuitionamountresponse"
+    elementFormDefault="qualified"
+    xmlns="http://bstsmartscholarship.sesmar.net/tuitionamountresponse"
+    xmlns:mstns="http://bstsmartscholarship.sesmar.net/tuitionamountresponse"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+
+	<xs:element name="TuitionAmountResponse" type="TuitionAmountResponseType" />
+
+	<xs:complexType name="TuitionAmountResponseType">
+		<xs:sequence>
+			<xs:element name="StudentNumber" type="StudentNumberType"/>
+			<xs:element name="TuitionAmount" type="xs:double"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="StudentNumberType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{8}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

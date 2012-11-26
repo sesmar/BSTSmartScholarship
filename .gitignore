@@ -9,4 +9,6 @@
 /BSTSmartScholarship.Sketchflow/obj
 /BSTSmartScholarship.UnitTests/bin
 /BSTSmartScholarship.UnitTests/obj
+/TestResults/*.mdf
+/TestResults/*.ldf
 *.suo

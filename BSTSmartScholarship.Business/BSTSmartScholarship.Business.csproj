@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Applicant.cs" />
     <Compile Include="ApplicantList.cs" />
+    <Compile Include="AwardScholarshipHandler.cs" />
     <Compile Include="BSTSmartScholarshipSerializer.cs" />
     <Compile Include="Award.cs" />
     <Compile Include="EmailService.cs" />
@@ -68,6 +69,14 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Schemas\Student.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Schemas\TuitionAmountRequest.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schemas\TuitionAmountResponse.xsd">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

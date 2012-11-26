@@ -35,7 +35,7 @@
                 <p>@Html.LabelFor(model => applicant.CreditHours): <span style="display: inline-block; width: 40px;"> @(applicant.CreditHours)</span></p>
             </div>
             <div style="display: inline-block; float: right;">
-                <a href='@Url.Action("DeclineApplicant", "Admin", new { sn = applicant.StudentNumber })' class="button">Decline</a>
+                <a href='@Url.Action("RejectApplicant", "Admin", new { sn = applicant.StudentNumber })' class="button">Decline</a>
             </div>
         </section>
           }}

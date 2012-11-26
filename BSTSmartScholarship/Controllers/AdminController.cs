@@ -54,24 +54,31 @@
 		[Authorize]
 		public ActionResult Awarded()
 		{
-			Boolean showVoteButton = true;
+			Boolean showVoteButton = false;
 			List<Applicant> applicants = new List<Applicant>(ApplicantList.GetList(a => a.IsVerified.GetValueOrDefault(false) && a.IsEligible.GetValueOrDefault(false)));
 
-			if (applicants.Count == 0)
-			{
-				showVoteButton = false;
-			}
-			else
+			//Set up chain
+			AwardScholarshipAgeHandler ageHandler = new AwardScholarshipAgeHandler(null);
+			AwardScholarshipGenderHandler genderHandler = new AwardScholarshipGenderHandler(ageHandler);
+			AwardScholarshipStatusHandler statusHandler = new AwardScholarshipStatusHandler(genderHandler);
+			AwardScholarshipCurrentGPAHandler currentHandler = new AwardScholarshipCurrentGPAHandler(statusHandler);
+			AwardScholarshipCumulativeGPAHandler cumulativeHandler = new AwardScholarshipCumulativeGPAHandler(currentHandler);
+			AwardScholarshipHandler handler = new AwardScholarshipHandler(cumulativeHandler);
+
+			applicants = handler.AwardScholarship(applicants);
+
+			if (applicants.Count > 1)
 			{
 				using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
 				{
-					if (sdx.Votes.Count(v => v.UserId.Equals(this.User.Identity.Name, StringComparison.OrdinalIgnoreCase)) > 0)
+					if (sdx.Votes.Count(v => v.UserId.Equals(this.User.Identity.Name, StringComparison.OrdinalIgnoreCase)) == 0)
 					{
-						showVoteButton = false;
+						showVoteButton = true;
 					}
 				}
 			}
 
+			ViewBag.MostVotes = applicants.Max(a => a.Votes.Count);
 			ViewBag.ShowVoteButton = showVoteButton;
 			return View(applicants);
 		}
@@ -84,6 +91,16 @@
 			email.SendDeclinedEmail(sn);
 
 			return RedirectToAction("Index", "Admin");
+		}
+
+		[Authorize]
+		public ActionResult RejectApplicant(String sn)
+		{
+			Applicant.RejectApplicant(sn);
+			EmailUtility email = new EmailUtility(new EmailService());
+			email.SendIneligibleEmail(sn);
+
+			return RedirectToAction("PendingReview", "Admin");
 		}
 
 		[Authorize]
@@ -103,6 +120,25 @@
 			{
 				Applicant.VoteForApplicant(sn, identity.Name);
 			}
+
+			return RedirectToAction("Awarded", "Admin");
+		}
+
+		public ActionResult AwardApplicant(String sn)
+		{
+			List<Applicant> applicants = new List<Applicant>(ApplicantList.GetList(a => a.IsVerified.GetValueOrDefault(false) && a.IsEligible.GetValueOrDefault(false)));
+			IEmailService emailService = new EmailService();
+			EmailUtility email = new EmailUtility(emailService);
+
+			Applicant applicant = applicants.FirstOrDefault(a => a.StudentNumber.Equals(sn, StringComparison.OrdinalIgnoreCase));
+
+			foreach (String studentNumber in applicants.Where(a=> !a.StudentNumber.Equals(sn, StringComparison.OrdinalIgnoreCase)).Select(a => a.StudentNumber))
+			{	
+				email.SendNotAwardedEmail(studentNumber);
+			}
+
+			Award.AddAward(applicant.StudentNumber, applicant.FirstName, applicant.LastName);
+			email.SendAwardedEmail(sn);
 
 			return RedirectToAction("Awarded", "Admin");
 		}

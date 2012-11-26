@@ -26,7 +26,7 @@
 		}
 
 		public IDbSet<Applicant> Applicants { get; set; }
-		//public IDbSet<Award> Awards { get; set; }
+		public IDbSet<Award> Awards { get; set; }
 		public IDbSet<Vote> Votes { get; set; }
 	}
 }

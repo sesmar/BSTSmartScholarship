@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema id="Student"
-    targetNamespace="http://tempuri.org/Student.xsd"
+    targetNamespace="http://bstsmartscholarship.sesmar.net/student"
     elementFormDefault="qualified"
-    xmlns="http://tempuri.org/Student.xsd"
-    xmlns:mstns="http://tempuri.org/Student.xsd"
+    xmlns="http://bstsmartscholarship.sesmar.net/student"
+    xmlns:mstns="http://bstsmartscholarship.sesmar.net/student"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
 >
 
-	<xs:element name="Applicant" type="ApplicantType" />
+	<xs:element name="Student" type="StudentType" />
 
-	<xs:complexType name="ApplicantType">
+	<xs:complexType name="StudentType">
 		<xs:sequence>
 			<xs:element name="StudentNumber" type="StudentNumberType"/>
 			<xs:element name="FirstName" type="xs:string"/>
@@ -19,12 +19,13 @@
 			<xs:element name="CreditHours" type="CreditHoursType"/>
 			<xs:element name="DateOfBirth" type="xs:dateTime"/>
 			<xs:element name="Gender" type="GenderType"/>
+			<xs:element name="CurrentGPA" type="GPAType"/>
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:simpleType name="StudentNumberType">
 		<xs:restriction base="xs:string">
-			<xs:pattern value="\d{10}" />
+			<xs:pattern value="\d{8}" />
 		</xs:restriction>
 	</xs:simpleType>
 
