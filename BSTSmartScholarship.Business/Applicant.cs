@@ -72,14 +72,20 @@
 		public Boolean? IsVerified { get; set; }
 
 		[XmlIgnore]
+		private List<Vote> _votes = null;
 		public List<Vote> Votes
 		{
 			get
 			{
-				using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
+				if (_votes == null)
 				{
-					return sdx.Votes.Where(v => v.StudentNumber.Equals(StudentNumber, StringComparison.OrdinalIgnoreCase)).ToList();
+					using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
+					{
+						_votes = sdx.Votes.Where(v => v.StudentNumber.Equals(StudentNumber, StringComparison.OrdinalIgnoreCase)).ToList();
+					}
 				}
+
+				return _votes;
 			}
 		}
 
@@ -122,11 +128,11 @@
 		{
 			using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
 			{
-				Applicant applicant = sdx.Applicants.FirstOrDefault(a => a.StudentNumber.Equals(studentNumber, StringComparison.OrdinalIgnoreCase));
+				Applicant applicant = Applicant.GetApplicant(studentNumber);
 				applicant.IsVerified = true;
 				applicant.IsEligible = true;
 
-				sdx.SaveChanges();
+				applicant.Save();
 			}
 		}
 
@@ -134,10 +140,10 @@
 		{
 			using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
 			{
-				Applicant applicant = sdx.Applicants.FirstOrDefault(a => a.StudentNumber.Equals(studentNumber, StringComparison.OrdinalIgnoreCase));
+				Applicant applicant = Applicant.GetApplicant(studentNumber);
 				applicant.IsVerified = true;
 
-				sdx.SaveChanges();
+				applicant.Save();
 			}
 		}
 
@@ -145,10 +151,10 @@
 		{
 			using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
 			{
-				Applicant applicant = sdx.Applicants.FirstOrDefault(a => a.StudentNumber.Equals(studentNumber, StringComparison.OrdinalIgnoreCase));
+				Applicant applicant = Applicant.GetApplicant(studentNumber);
 				applicant.IsEligible = false;
 
-				sdx.SaveChanges();
+				applicant.Save();
 			}
 		}
 
@@ -156,10 +162,10 @@
 		{
 			using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
 			{
-				Applicant applicant = sdx.Applicants.FirstOrDefault(a => a.StudentNumber.Equals(studentNumber, StringComparison.OrdinalIgnoreCase));
+				Applicant applicant = Applicant.GetApplicant(studentNumber);
 				applicant.IsEligible = false;
 
-				sdx.SaveChanges();
+				applicant.Save();
 			}
 		}
 
@@ -207,11 +213,22 @@
 					applicant.Status = this.Status;
 					applicant.CumulativeGPA = this.CumulativeGPA;
 					applicant.CreditHours = this.CreditHours;
+					applicant.IsEligible = this.IsEligible;
+					applicant.IsVerified = this.IsVerified;
+
+					List<Vote> newVotes = this.Votes.Where(v => applicant.Votes.Count(vi => vi.UserId == v.UserId) == 0).ToList();
+					applicant.Votes.Clear();
+
+					foreach (Vote vote in newVotes)
+					{
+						applicant.Votes.Add(vote);
+					}
 
 					cdx.SaveChanges();
+					applicant._votes = null;
 				}
 
-				return this;
+				return applicant;
 			}
 		}
 
@@ -233,10 +250,22 @@
 					applicant.Status = this.Status;
 					applicant.CumulativeGPA = this.CumulativeGPA;
 					applicant.CreditHours = this.CreditHours;
+					applicant.IsEligible = this.IsEligible;
+					applicant.IsVerified = this.IsVerified;
+
+					List<Vote> newVotes = this.Votes.Where(v => applicant.Votes.Count(vi => vi.UserId == v.UserId) == 0).ToList();
+					applicant.Votes.Clear();
+
+					foreach (Vote vote in newVotes)
+					{
+						applicant.Votes.Add(vote);
+					}
+
 					cdx.Applicants.Add(applicant);
 
 					cdx.SaveChanges();
 					applicant.IsNew = false;
+					applicant._votes = null;
 				}
 
 				return applicant;

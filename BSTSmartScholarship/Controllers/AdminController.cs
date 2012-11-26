@@ -21,6 +21,11 @@
 		[Authorize]
 		public ActionResult Index()
 		{
+			if (Award.Awarded(null, null))
+			{
+				return RedirectToAction("Closed", "Admin");
+			}
+
 			return View(ApplicantList.GetList(a => !a.IsVerified == null));
 		}
 
@@ -48,12 +53,22 @@
 		[Authorize]
 		public ActionResult PendingReview()
 		{
+			if (Award.Awarded(null, null))
+			{
+				return RedirectToAction("Closed", "Admin");
+			}
+
 			return View(ApplicantList.GetList(a => a.IsVerified.GetValueOrDefault(false) && a.IsEligible.GetValueOrDefault(false)));
 		}
 
 		[Authorize]
 		public ActionResult Awarded()
 		{
+			if (Award.Awarded(null, null))
+			{
+				return RedirectToAction("Closed", "Admin");
+			}
+
 			Boolean showVoteButton = false;
 			List<Applicant> applicants = new List<Applicant>(ApplicantList.GetList(a => a.IsVerified.GetValueOrDefault(false) && a.IsEligible.GetValueOrDefault(false)));
 
@@ -66,6 +81,7 @@
 			AwardScholarshipHandler handler = new AwardScholarshipHandler(cumulativeHandler);
 
 			applicants = handler.AwardScholarship(applicants);
+			ViewBag.MostVotes = applicants.Max(a => a.Votes.Count);
 
 			if (applicants.Count > 1)
 			{
@@ -76,11 +92,26 @@
 						showVoteButton = true;
 					}
 				}
+
+				if (applicants.Count(a => a.Votes.Count == ViewBag.MostVotes) == 1)
+				{
+					ViewBag.AwardTo = applicants.First(a => a.Votes.Count == ViewBag.MostVotes).StudentNumber;
+				}
+			}
+			else
+			{
+				ViewBag.AwardTo = applicants.First().StudentNumber;
 			}
 
-			ViewBag.MostVotes = applicants.Max(a => a.Votes.Count);
+			ViewBag.HasUserVoted = Vote.HasVoted(this.User.Identity.Name);
 			ViewBag.ShowVoteButton = showVoteButton;
 			return View(applicants);
+		}
+
+		[Authorize]
+		public ActionResult Closed()
+		{
+			return View(Award.GetAwarded(null, null));
 		}
 
 		[Authorize]
@@ -118,7 +149,10 @@
 
 			if (identity.IsAuthenticated)
 			{
-				Applicant.VoteForApplicant(sn, identity.Name);
+				Applicant applicant = Applicant.GetApplicant(sn);
+				applicant.Votes.Add(new Vote() { StudentNumber = sn, UserId = identity.Name });
+				applicant.Save();
+				//Applicant.VoteForApplicant(sn, identity.Name);
 			}
 
 			return RedirectToAction("Awarded", "Admin");

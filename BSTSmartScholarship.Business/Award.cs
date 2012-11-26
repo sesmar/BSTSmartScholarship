@@ -32,6 +32,24 @@
 			return award;
 		}
 
+		public static Applicant GetAwarded(String year, String semester)
+		{
+			Award award = null;
+			Applicant applicant = null;
+
+			using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
+			{
+				award = sdx.Awards.FirstOrDefault();
+
+				if (award != null)
+				{
+					applicant = Applicant.GetApplicant(award.StudentNumber);
+				}
+			}
+
+			return applicant;
+		}
+
 		public static Award AddAward(String studentNumber, String firstName, String lastName)
 		{
 			Award award = null;
@@ -57,6 +75,14 @@
 		}
 
 		#endregion
+
+		public static Boolean Awarded(String year, String semester)
+		{
+			using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
+			{
+				return (sdx.Awards.Count() > 0);
+			}
+		}
 
 	}
 }

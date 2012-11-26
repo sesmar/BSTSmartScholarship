@@ -19,7 +19,7 @@
 	<div id="my-dialog"></div>
 	@{ foreach (BSTSmartScholarship.Business.Applicant applicant in Model)
 		{
-		<section class="applicant" @{if (applicant.Votes.Count == ViewBag.MostVotes)
+		<section class="applicant" @{if (applicant.Votes.Count == ViewBag.MostVotes && ViewBag.HasUserVoted)
 															 { <text>style="background-color: #00ff21;"</text>}}>
 			<div style="display: inline-block; min-width: 170px;">
 				<p class="name">@(String.Format("{0} {1}", applicant.FirstName, applicant.LastName))</p>
@@ -31,7 +31,7 @@
 				<p>@Html.LabelFor(model => applicant.Gender): @(((BSTSmartScholarship.Business.Gender)applicant.Gender).ToString())</p>
 				<p>@Html.LabelFor(model => applicant.DateOfBirth): @(applicant.DateOfBirth.ToShortDateString())</p>
 			</div>
-			<div style="display: inline-block; text-align: right; min-width: 440px;">
+			<div style="display: inline-block; text-align: right; min-width: 400px;">
 				<p class="status">@(((BSTSmartScholarship.Business.Status)applicant.Status).ToString())</p>
 				<p>@Html.LabelFor(model => applicant.CumulativeGPA): <span style="display: inline-block; width: 40px;">@(applicant.CumulativeGPA)</span></p>
 				<p>@Html.LabelFor(model => applicant.CreditHours): <span style="display: inline-block; width: 40px;">@(applicant.CreditHours)</span></p>
@@ -39,8 +39,9 @@
 			<div style="display: inline-block; float: right;">
 				<a href='@Url.Action("VoteForApplicant", "Admin", new { sn = applicant.StudentNumber })' class="button" @{if (!ViewBag.ShowVoteButton)
 																																																							{ <text>style="display: none;"</text>}}>Vote</a>
-				<a href='@Url.Action("AwardApplicant", "Admin", new { sn = applicant.StudentNumber })' class="button" @{if (ViewBag.ShowVoteButton)
-																																																	 { <text>style="display: none;"</text>}}>Award</a>
+				<a href='@Url.Action("AwardApplicant", "Admin", new { sn = applicant.StudentNumber })' class="button clear" @{if (!applicant.StudentNumber.Equals(ViewBag.AwardTo, StringComparison.OrdinalIgnoreCase)
+																																																										|| !ViewBag.HasUserVoted)
+																																																									{ <text>style="display: none;"</text>}}>Award</a>
 			</div>
 		</section>
 		}}

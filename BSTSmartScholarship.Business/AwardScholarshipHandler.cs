@@ -74,7 +74,7 @@
 
 		public override List<Applicant> AwardScholarship(List<Applicant> applicants)
 		{
-			if (applicants.Where(a => a.Status == (Int32)Status.Junior).Count() > 0)
+			if (applicants.Count(a => a.Status == (Int32)Status.Junior) > 0)
 			{
 				applicants = applicants.Where(a => a.Status == (Int32)Status.Junior).ToList();
 			}

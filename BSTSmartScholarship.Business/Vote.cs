@@ -23,5 +23,13 @@
 		[Required]
 		[Column(Order = 1)]
 		public String StudentNumber { get; set; }
+
+		public static Boolean HasVoted(String userName)
+		{
+			using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
+			{
+				return (sdx.Votes.Count(v => v.UserId.Equals(userName, StringComparison.OrdinalIgnoreCase)) > 0);
+			}
+		}
 	}
 }

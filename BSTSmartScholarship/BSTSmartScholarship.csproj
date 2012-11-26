@@ -188,6 +188,10 @@
     <Compile Include="Migrations\201211252140558_Update_Votes.Designer.cs">
       <DependentUpon>201211252140558_Update_Votes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201211261817268_Updates_Misc_01.cs" />
+    <Compile Include="Migrations\201211261817268_Updates_Misc_01.Designer.cs">
+      <DependentUpon>201211261817268_Updates_Misc_01.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\SelectLists.cs" />
@@ -313,6 +317,7 @@
     <Content Include="Views\Admin\PendingReview.cshtml" />
     <Content Include="Views\Admin\Awarded.cshtml" />
     <Content Include="Views\Home\Confirmation.cshtml" />
+    <Content Include="Views\Admin\Closed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -341,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201211252140558_Update_Votes.resx">
       <DependentUpon>201211252140558_Update_Votes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201211261817268_Updates_Misc_01.resx">
+      <DependentUpon>201211261817268_Updates_Misc_01.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

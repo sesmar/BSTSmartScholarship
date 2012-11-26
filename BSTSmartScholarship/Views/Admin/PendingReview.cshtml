@@ -16,7 +16,6 @@
 <h2>Pending Review</h2>
 
 <section class="applicants">
-    <div id="my-dialog"></div>
     @{ foreach (BSTSmartScholarship.Business.Applicant applicant in Model) {
         <section class="applicant">
             <div style="display: inline-block; min-width: 170px;">
@@ -29,7 +28,7 @@
                 <p>@Html.LabelFor(model => applicant.Gender): @(((BSTSmartScholarship.Business.Gender)applicant.Gender).ToString())</p>
                 <p>@Html.LabelFor(model => applicant.DateOfBirth): @(applicant.DateOfBirth.ToShortDateString())</p>
             </div>
-            <div style="display: inline-block; text-align: right; min-width: 440px;">
+            <div style="display: inline-block; text-align: right; min-width: 400px;">
                 <p class="status">@(((BSTSmartScholarship.Business.Status)applicant.Status).ToString())</p>
                 <p>@Html.LabelFor(model => applicant.CumulativeGPA): <span style="display: inline-block; width: 40px;"> @(applicant.CumulativeGPA)</span></p>
                 <p>@Html.LabelFor(model => applicant.CreditHours): <span style="display: inline-block; width: 40px;"> @(applicant.CreditHours)</span></p>

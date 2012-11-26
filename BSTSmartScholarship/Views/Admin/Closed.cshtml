@@ -1,0 +1,38 @@
+﻿@model BSTSmartScholarship.Business.Applicant
+
+@{
+    ViewBag.Title = "Closed";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<nav>
+    <ul id="submenu">
+        <li>@Html.ActionLink("Pending Verification", "Index", "Admin")</li>
+        <li>@Html.ActionLink("Eligible", "PendingReview", "Admin")</li>
+        <li>@Html.ActionLink("Awarded", "Awarded", "Admin")</li>
+    </ul>
+</nav>
+
+<h2>This years scholarship has already been awarded</h2>
+
+@{if(Model != null){<text>
+<section class="applicants">
+	<section class="applicant">
+			<div style="display: inline-block; min-width: 170px;">
+					<p class="name">@(String.Format("{0} {1}", Model.FirstName, Model.LastName))</p>
+					<p>@(BSTSmartScholarship.Business.RegexUtility.FormatPhone(Model.PhoneNumber))</p>
+					<p>@(Model.EmailAddress)</p>
+			</div>
+			<div style="display: inline-block; text-align: left;">
+					<p></p>
+					<p>@Html.LabelFor(model => model.Gender): @(((BSTSmartScholarship.Business.Gender)Model.Gender).ToString())</p>
+					<p>@Html.LabelFor(model => model.DateOfBirth): @(Model.DateOfBirth.ToShortDateString())</p>
+			</div>
+			<div style="display: inline-block; text-align: right; min-width: 440px;">
+					<p class="status">@(((BSTSmartScholarship.Business.Status)Model.Status).ToString())</p>
+					<p>@Html.LabelFor(model => model.CumulativeGPA): <span style="display: inline-block; width: 40px;"> @(Model.CumulativeGPA)</span></p>
+					<p>@Html.LabelFor(model => model.CreditHours): <span style="display: inline-block; width: 40px;"> @(Model.CreditHours)</span></p>
+			</div>
+	</section>
+</section>
+</text>}}

@@ -14,6 +14,7 @@
 	public class SmartScholarshipContext : DbContext, ISmartScholarshipContext
 	{
 		public static SmartScholarshipContext _current;
+
 		public static SmartScholarshipContext Current
 		{
 			get
