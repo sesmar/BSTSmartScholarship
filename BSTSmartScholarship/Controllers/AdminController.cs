@@ -54,13 +54,35 @@
 		[Authorize]
 		public ActionResult Awarded()
 		{
-			return View(ApplicantList.GetList(a => a.IsVerified.GetValueOrDefault(false) && a.IsEligible.GetValueOrDefault(false)));
+			Boolean showVoteButton = true;
+			List<Applicant> applicants = new List<Applicant>(ApplicantList.GetList(a => a.IsVerified.GetValueOrDefault(false) && a.IsEligible.GetValueOrDefault(false)));
+
+			if (applicants.Count == 0)
+			{
+				showVoteButton = false;
+			}
+			else
+			{
+				using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
+				{
+					if (sdx.Votes.Count(v => v.UserId.Equals(this.User.Identity.Name, StringComparison.OrdinalIgnoreCase)) > 0)
+					{
+						showVoteButton = false;
+					}
+				}
+			}
+
+			ViewBag.ShowVoteButton = showVoteButton;
+			return View(applicants);
 		}
 
 		[Authorize]
 		public ActionResult DeclineApplicant(String sn)
 		{
 			Applicant.DeclineApplicant(sn);
+			EmailUtility email = new EmailUtility(new EmailService());
+			email.SendDeclinedEmail(sn);
+
 			return RedirectToAction("Index", "Admin");
 		}
 
@@ -68,6 +90,7 @@
 		public ActionResult VerifyApplicant(String sn)
 		{
 			Applicant.VerifyApplicant(sn);
+
 			return RedirectToAction("Index", "Admin");
 		}
 

@@ -23,8 +23,6 @@
 
 		public ActionResult Apply()
 		{
-			ViewBag.Message = "Your app description page.";
-
 			return View();
 		}
 
@@ -34,13 +32,6 @@
 			applicant.Save();
 
 			return RedirectToAction("Index");
-		}
-
-		public ActionResult Contact()
-		{
-			ViewBag.Message = "Your contact page.";
-
-			return View();
 		}
 	}
 }

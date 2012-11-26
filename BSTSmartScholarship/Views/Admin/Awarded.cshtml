@@ -34,7 +34,7 @@
                 <p>@Html.LabelFor(model => applicant.CumulativeGPA): <span style="display: inline-block; width: 40px;"> @(applicant.CumulativeGPA)</span></p>
                 <p>@Html.LabelFor(model => applicant.CreditHours): <span style="display: inline-block; width: 40px;"> @(applicant.CreditHours)</span></p>
             </div>
-            <div style="display: inline-block; float: right;">
+            <div style="display: inline-block; float: right; @{if (!ViewBag.ShowVoteButton){ <text>display: none;</text>}}">
                 <a href='@Url.Action("VoteForApplicant", "Admin", new { sn = applicant.StudentNumber })' class="button">Vote</a>
             </div>
         </section>

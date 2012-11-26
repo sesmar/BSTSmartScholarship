@@ -19,7 +19,7 @@
 			_emailService = emailService;
 		}
 
-		public void DeclinedEmail(String sn)
+		public void SendDeclinedEmail(String sn)
 		{
 			Applicant applicant = Applicant.GetApplicant(sn);
 
