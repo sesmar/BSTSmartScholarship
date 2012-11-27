@@ -36,13 +36,13 @@
 				<p>@Html.LabelFor(model => applicant.CumulativeGPA): <span style="display: inline-block; width: 40px;">@(applicant.CumulativeGPA)</span></p>
 				<p>@Html.LabelFor(model => applicant.CreditHours): <span style="display: inline-block; width: 40px;">@(applicant.CreditHours)</span></p>
 			</div>
-			<div style="display: inline-block; float: right;">
-				<a href='@Url.Action("VoteForApplicant", "Admin", new { sn = applicant.StudentNumber })' class="button" @{if (!ViewBag.ShowVoteButton)
-																																																							{ <text>style="display: none;"</text>}}>Vote</a>
-				<a href='@Url.Action("AwardApplicant", "Admin", new { sn = applicant.StudentNumber })' class="button clear" @{if (!applicant.StudentNumber.Equals(ViewBag.AwardTo, StringComparison.OrdinalIgnoreCase)
-																																																										|| !ViewBag.HasUserVoted)
-																																																									{ <text>style="display: none;"</text>}}>Award</a>
-			</div>
+            <div style="display: inline-block; float: right;">
+                <a href='@Url.Action("VoteForApplicant", "Admin", new { sn = applicant.StudentNumber })' class="button" @{if (!ViewBag.ShowVoteButton)
+                                                                                                                          { <text>style="display: none;"</text>}}>Vote</a>
+                <a href='@Url.Action("AwardApplicant", "Admin", new { sn = applicant.StudentNumber })' class="button clear" @{if ((!applicant.StudentNumber.Equals(ViewBag.AwardTo, StringComparison.OrdinalIgnoreCase)
+                                                                                                                    || !ViewBag.HasUserVoted) && Model.Count() > 1)
+                                                                                                                              { <text>style="display: none;"</text>}}>Award</a>
+            </div>
 		</section>
 		}}
 </section>

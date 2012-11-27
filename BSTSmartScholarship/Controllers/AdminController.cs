@@ -72,38 +72,45 @@
 			Boolean showVoteButton = false;
 			List<Applicant> applicants = new List<Applicant>(ApplicantList.GetList(a => a.IsVerified.GetValueOrDefault(false) && a.IsEligible.GetValueOrDefault(false)));
 
-			//Set up chain
-			AwardScholarshipAgeHandler ageHandler = new AwardScholarshipAgeHandler(null);
-			AwardScholarshipGenderHandler genderHandler = new AwardScholarshipGenderHandler(ageHandler);
-			AwardScholarshipStatusHandler statusHandler = new AwardScholarshipStatusHandler(genderHandler);
-			AwardScholarshipCurrentGPAHandler currentHandler = new AwardScholarshipCurrentGPAHandler(statusHandler);
-			AwardScholarshipCumulativeGPAHandler cumulativeHandler = new AwardScholarshipCumulativeGPAHandler(currentHandler);
-			AwardScholarshipHandler handler = new AwardScholarshipHandler(cumulativeHandler);
+			ViewBag.HasUserVoted = false;
+			ViewBag.MostVotes = 0;
 
-			applicants = handler.AwardScholarship(applicants);
-			ViewBag.MostVotes = applicants.Max(a => a.Votes.Count);
-
-			if (applicants.Count > 1)
+			if (applicants.Count > 0)
 			{
-				using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
+				//Set up chain
+				AwardScholarshipAgeHandler ageHandler = new AwardScholarshipAgeHandler(null);
+				AwardScholarshipGenderHandler genderHandler = new AwardScholarshipGenderHandler(ageHandler);
+				AwardScholarshipStatusHandler statusHandler = new AwardScholarshipStatusHandler(genderHandler);
+				AwardScholarshipCurrentGPAHandler currentHandler = new AwardScholarshipCurrentGPAHandler(statusHandler);
+				AwardScholarshipCumulativeGPAHandler cumulativeHandler = new AwardScholarshipCumulativeGPAHandler(currentHandler);
+				AwardScholarshipHandler handler = new AwardScholarshipHandler(cumulativeHandler);
+
+				applicants = handler.AwardScholarship(applicants);
+				ViewBag.MostVotes = applicants.Max(a => a.Votes.Count);
+
+				if (applicants.Count > 1)
 				{
-					if (sdx.Votes.Count(v => v.UserId.Equals(this.User.Identity.Name, StringComparison.OrdinalIgnoreCase)) == 0)
+					using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
 					{
-						showVoteButton = true;
+						if (sdx.Votes.Count(v => v.UserId.Equals(this.User.Identity.Name, StringComparison.OrdinalIgnoreCase)) == 0)
+						{
+							showVoteButton = true;
+						}
+					}
+
+					if (applicants.Count(a => a.Votes.Count == ViewBag.MostVotes) == 1)
+					{
+						ViewBag.AwardTo = applicants.First(a => a.Votes.Count == ViewBag.MostVotes).StudentNumber;
 					}
 				}
-
-				if (applicants.Count(a => a.Votes.Count == ViewBag.MostVotes) == 1)
+				else
 				{
-					ViewBag.AwardTo = applicants.First(a => a.Votes.Count == ViewBag.MostVotes).StudentNumber;
+					ViewBag.AwardTo = applicants.First().StudentNumber;
 				}
-			}
-			else
-			{
-				ViewBag.AwardTo = applicants.First().StudentNumber;
+
+				ViewBag.HasUserVoted = Vote.HasVoted(this.User.Identity.Name);	
 			}
 
-			ViewBag.HasUserVoted = Vote.HasVoted(this.User.Identity.Name);
 			ViewBag.ShowVoteButton = showVoteButton;
 			return View(applicants);
 		}
@@ -152,7 +159,6 @@
 				Applicant applicant = Applicant.GetApplicant(sn);
 				applicant.Votes.Add(new Vote() { StudentNumber = sn, UserId = identity.Name });
 				applicant.Save();
-				//Applicant.VoteForApplicant(sn, identity.Name);
 			}
 
 			return RedirectToAction("Awarded", "Admin");
@@ -173,6 +179,15 @@
 
 			Award.AddAward(applicant.StudentNumber, applicant.FirstName, applicant.LastName);
 			email.SendAwardedEmail(sn);
+
+			Registrar registrar = new Registrar();
+			TuitionAmountRequest request = new TuitionAmountRequest() { StudentNumber = sn };
+			XmlDocument requestDoc = (new BSTSmartScholarshipSerializer<TuitionAmountRequest>()).Serialize(request);
+
+			XmlDocument responseDoc = registrar.RequestTuitionAmount(requestDoc);
+			TuitionAmountResponse response = (new BSTSmartScholarshipSerializer<TuitionAmountResponse>()).Deserialize(responseDoc);
+
+			//TODO: Send the amount to Accounting.
 
 			return RedirectToAction("Awarded", "Admin");
 		}

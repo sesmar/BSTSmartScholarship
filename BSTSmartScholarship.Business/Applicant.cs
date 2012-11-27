@@ -273,21 +273,5 @@
 		}
 
 		#endregion
-
-		public static void VoteForApplicant(string sn, String userId)
-		{
-			using (ISmartScholarshipContext sdx = SmartScholarshipContext.Current)
-			{
-				Vote vote = sdx.Votes.FirstOrDefault(v => v.StudentNumber.Equals(sn, StringComparison.OrdinalIgnoreCase) && v.UserId == userId);
-
-				if (vote == null)
-				{
-					vote = new Vote() { StudentNumber = sn, UserId = userId };
-					sdx.Votes.Add(vote);
-				}
-
-				sdx.SaveChanges();
-			}
-		}
 	}
 }
