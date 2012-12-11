@@ -33,11 +33,13 @@
 			SendEmail(applicant.EmailAddress, "BST Smart Scholarship, Ineligible Notification.", "We are sorry to inform you that you are not eligible for the scholarship.");
 		}
 
-		public void SendAwardedEmail(String sn)
+		public void SendAwardedEmail(String sn, Double amount)
 		{
 			Applicant applicant = Applicant.GetApplicant(sn);
-
-			SendEmail(applicant.EmailAddress, "BST Smart Scholarship, Awarded Notification.", "Congratulation, you are this years winner of the BST Smart Scholarship.");
+			String message = String.Format(
+				"Congratulation, you are this years winner of the BST Smart Scholarship. You will receive a reimbursement in the amount of {0:C}",
+				amount);
+			SendEmail(applicant.EmailAddress, "BST Smart Scholarship, Awarded Notification.", message);
 		}
 
 		public void SendNotAwardedEmail(String sn)

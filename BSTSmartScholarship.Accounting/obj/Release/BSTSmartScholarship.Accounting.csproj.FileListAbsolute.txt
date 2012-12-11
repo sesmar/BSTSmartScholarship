@@ -1,0 +1,4 @@
+C:\Users\Christopher\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.Accounting\bin\BSTSmartScholarship.Accounting.dll
+C:\Users\Christopher\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.Accounting\bin\BSTSmartScholarship.Accounting.pdb
+C:\Users\Christopher\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.Accounting\obj\Release\BSTSmartScholarship.Accounting.dll
+C:\Users\Christopher\Documents\GitHub\BSTSmartScholarship\BSTSmartScholarship.Accounting\obj\Release\BSTSmartScholarship.Accounting.pdb

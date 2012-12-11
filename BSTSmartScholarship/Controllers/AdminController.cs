@@ -10,6 +10,7 @@
 	using System.Web.Mvc;
 	using System.Xml;
 	using BSTSmartScholarship.Business;
+	using BSTSmartScholarship.Business.Schemas;
 	using BSTSmartScholarship.Models;
 
 	#endregion
@@ -29,6 +30,12 @@
 			return View(ApplicantList.GetList(a => !a.IsVerified == null));
 		}
 
+
+		/// <summary>
+		/// Controller action to handle showing the registrar information.
+		/// </summary>
+		/// <param name="sn"></param>
+		/// <returns></returns>
 		[Authorize]
 		public ActionResult VerifyWithRegistrar(String sn)
 		{
@@ -61,6 +68,10 @@
 			return View(ApplicantList.GetList(a => a.IsVerified.GetValueOrDefault(false) && a.IsEligible.GetValueOrDefault(false)));
 		}
 
+		/// <summary>
+		/// Controller action to handle showing the current awardee.
+		/// </summary>
+		/// <returns></returns>
 		[Authorize]
 		public ActionResult Awarded()
 		{
@@ -121,6 +132,11 @@
 			return View(Award.GetAwarded(null, null));
 		}
 
+		/// <summary>
+		/// Controller action to handle declining an applicant
+		/// </summary>
+		/// <param name="sn">The studnet number to decline</param>
+		/// <returns></returns>
 		[Authorize]
 		public ActionResult DeclineApplicant(String sn)
 		{
@@ -131,6 +147,11 @@
 			return RedirectToAction("Index", "Admin");
 		}
 
+		/// <summary>
+		/// Controller action to handle rejecting an applicant.
+		/// </summary>
+		/// <param name="sn">The student number to reject</param>
+		/// <returns></returns>
 		[Authorize]
 		public ActionResult RejectApplicant(String sn)
 		{
@@ -141,6 +162,11 @@
 			return RedirectToAction("PendingReview", "Admin");
 		}
 
+		/// <summary>
+		/// Controller action to handle Verifying an applicant
+		/// </summary>
+		/// <param name="sn">Student number to verify.</param>
+		/// <returns></returns>
 		[Authorize]
 		public ActionResult VerifyApplicant(String sn)
 		{
@@ -149,6 +175,11 @@
 			return RedirectToAction("Index", "Admin");
 		}
 
+		/// <summary>
+		/// Controller action to handle Voting for an applicant
+		/// </summary>
+		/// <param name="sn">The student number to vote for.</param>
+		/// <returns></returns>
 		[Authorize]
 		public ActionResult VoteForApplicant(String sn)
 		{
@@ -164,6 +195,12 @@
 			return RedirectToAction("Awarded", "Admin");
 		}
 
+		/// <summary>
+		/// Controller Action to handle awarding the scholarship.
+		/// </summary>
+		/// <param name="sn">The student number to award the scholarship to.</param>
+		/// <returns></returns>
+		[Authorize]
 		public ActionResult AwardApplicant(String sn)
 		{
 			List<Applicant> applicants = new List<Applicant>(ApplicantList.GetList(a => a.IsVerified.GetValueOrDefault(false) && a.IsEligible.GetValueOrDefault(false)));
@@ -172,13 +209,29 @@
 
 			Applicant applicant = applicants.FirstOrDefault(a => a.StudentNumber.Equals(sn, StringComparison.OrdinalIgnoreCase));
 
+			//Notify other applicants that they did not win.
 			foreach (String studentNumber in applicants.Where(a=> !a.StudentNumber.Equals(sn, StringComparison.OrdinalIgnoreCase)).Select(a => a.StudentNumber))
 			{	
 				email.SendNotAwardedEmail(studentNumber);
 			}
 
-			Award.AddAward(applicant.StudentNumber, applicant.FirstName, applicant.LastName);
-			email.SendAwardedEmail(sn);
+			///Prepare the request for the registrar.
+			TuitionAmountRequest request = new TuitionAmountRequest(applicant.StudentNumber);
+			XmlSchemaProvider provider = new XmlSchemaProvider();
+			XmlDocument requestDocument = (new BSTSmartScholarshipSerializer<TuitionAmountRequest>()).Serialize(request);
+			Registrar registrar = new Registrar();
+
+			XmlDocument responseDocument = registrar.RequestTuitionAmount(requestDocument);
+			TuitionAmountResponse response = (new BSTSmartScholarshipSerializer<TuitionAmountResponse>()).Deserialize(responseDocument);
+
+			//Award the scholarship
+			Award.AddAward(applicant.StudentNumber, applicant.FirstName, applicant.LastName, response.TuitionAmount);
+
+			//Notify Accounting of the reimbursement amount.
+			Award.NotifyAccounting(response.StudentNumber, response.TuitionAmount);
+
+			//Send award emails.
+			email.SendAwardedEmail(sn, response.TuitionAmount);
 
 			Registrar registrar = new Registrar();
 			TuitionAmountRequest request = new TuitionAmountRequest() { StudentNumber = sn };

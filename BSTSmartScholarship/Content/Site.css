@@ -625,6 +625,12 @@ fieldset
 	padding: 0;
 }
 
+	fieldset.login label
+	{
+		width: 85px;
+		text-align: left;
+	}
+
 	fieldset legend
 	{
 		display: none;

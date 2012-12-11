@@ -8,6 +8,7 @@
 	using System.Linq;
 	using System.Text;
 	using System.Threading.Tasks;
+	using BSTSmartScholarship.Business.AccountingService;
 
 	#endregion
 
@@ -17,6 +18,7 @@
 		public String StudentNumber { get; set; }
 		public String FirstName { get; set; }
 		public String LastName { get; set; }
+		public Double AwardAmount { get; set; }
 
 		#region "Factory Methods"
 
@@ -50,7 +52,7 @@
 			return applicant;
 		}
 
-		public static Award AddAward(String studentNumber, String firstName, String lastName)
+		public static Award AddAward(String studentNumber, String firstName, String lastName, Double awardAmount)
 		{
 			Award award = null;
 
@@ -67,6 +69,7 @@
 				award.StudentNumber = studentNumber;
 				award.FirstName = firstName;
 				award.LastName = lastName;
+				award.AwardAmount = awardAmount;
 
 				sdx.SaveChanges();
 			}
@@ -84,5 +87,12 @@
 			}
 		}
 
+		public static String NotifyAccounting(String studentNumber, Double amount)
+		{
+			AccountingSoapClient client = new AccountingSoapClient();
+			String response = client.RequestRefund(studentNumber, amount);
+
+			return response;
+		}
 	}
 }
