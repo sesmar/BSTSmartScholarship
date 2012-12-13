@@ -18,8 +18,8 @@ namespace BSTSmartScholarship.UnitTests
 		{
 			get
 			{
-				return Applicant.NewApplicant(
-						"88634352",
+				Applicant testApplicant = Applicant.NewApplicant(
+						"12345678",
 						"Christopher",
 						"Sims",
 						"1232343456",
@@ -27,10 +27,15 @@ namespace BSTSmartScholarship.UnitTests
 						1,
 						new DateTime(1982, 7, 13),
 						4,
-						3.7,
-						6);
+						3.81,
+						12);
+
+				testApplicant.Votes = new List<Vote>();
+
+				return testApplicant;
 			}
 		}
+
 
 		public Registrar_Tests()
 		{

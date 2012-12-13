@@ -11,6 +11,7 @@
 	using BSTSmartScholarship.Business.Schemas;
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 	using System.Xml.Schema;
+	using System.Collections.Generic;
 
 	#endregion
 
@@ -21,7 +22,7 @@
 		{
 			get
 			{
-				return Applicant.NewApplicant(
+				Applicant testApplicant = Applicant.NewApplicant(
 						"12345678",
 						"Christopher",
 						"Sims",
@@ -32,6 +33,10 @@
 						4,
 						3.81,
 						12);
+
+				testApplicant.Votes = new List<Vote>();
+
+				return testApplicant;
 			}
 		}
 

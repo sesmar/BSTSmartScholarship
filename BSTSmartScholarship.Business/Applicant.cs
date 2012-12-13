@@ -87,6 +87,8 @@
 
 				return _votes;
 			}
+
+			set { _votes = value; }
 		}
 
 		#endregion

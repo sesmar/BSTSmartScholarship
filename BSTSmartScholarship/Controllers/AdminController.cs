@@ -233,15 +233,6 @@
 			//Send award emails.
 			email.SendAwardedEmail(sn, response.TuitionAmount);
 
-			Registrar registrar = new Registrar();
-			TuitionAmountRequest request = new TuitionAmountRequest() { StudentNumber = sn };
-			XmlDocument requestDoc = (new BSTSmartScholarshipSerializer<TuitionAmountRequest>()).Serialize(request);
-
-			XmlDocument responseDoc = registrar.RequestTuitionAmount(requestDoc);
-			TuitionAmountResponse response = (new BSTSmartScholarshipSerializer<TuitionAmountResponse>()).Deserialize(responseDoc);
-
-			//TODO: Send the amount to Accounting.
-
 			return RedirectToAction("Awarded", "Admin");
 		}
 	}
